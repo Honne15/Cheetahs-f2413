@@ -26,9 +26,9 @@ body {
 header {
   background-color: #5F8DB5;
   color: white;
-  padding: 20px 0;
-  width: 100%;
-  margin-top: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .options {
@@ -45,22 +45,29 @@ header {
   margin-left: 40px;
   width: 200px;
   height: 120px;
+  margin-top: 20px;
 }
 
-.title h1 {
-  color: white;
-  text-align: center;
-  font-size: 45px;
-  margin-left: 20vh;
-}
-
-.icons {
-  text-align: center;
-  margin-left: 90px;
-  font-size: 20px;
+.title {
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
+  margin-top: -100px;
+}
+
+.title h1 {
+  font-size: 2rem;
+  margin: 0;
+}
+
+.icons {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-right: 20px;
+  margin-top:  10px;
+  margin-left: 90px; 
 }
 
 .icons i {
@@ -73,6 +80,9 @@ header {
   font-weight: bold;
   color: black;
   font-size: 1.5rem;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .icons i:hover .tooltip {
@@ -80,13 +90,23 @@ header {
   opacity: 1;
 }
 
+.nav-icons-container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  background-color: #5F8DB5; /* Mantener el color de fondo consistente */
+  margin-top: 10px; /* Espacio entre el título y el nav */
+}
+
 nav {
   overflow: hidden;
   display: flex;
   align-items: center;
-  text-align: center;
   justify-content: center;
-  width: 100%;
+  flex: 1;
+  margin-top: 10px; 
+  margin-left: 300px;
 }
 
 nav ul {
@@ -95,6 +115,7 @@ nav ul {
   padding: 0;
   display: flex;
   justify-content: space-around;
+  width: 100%;
 }
 
 nav ul li {
@@ -103,14 +124,15 @@ nav ul li {
 
 nav ul li a {
   display: block;
-  color: white;
-  text-align: center;
-  padding: 14px 20px;
-  text-decoration: none;
+      color: white;
+      text-align: center;
+      padding: 14px 20px;
+      text-decoration: none;
 }
 
 nav ul li a:hover {
-  background-color: #575757;
+  background-color: #FA4616;
+  border-radius: 10px;
 }
 
 .tooltip {
