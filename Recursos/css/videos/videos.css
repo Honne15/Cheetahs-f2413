@@ -1,0 +1,245 @@
+/* Estilos generales */
+body {
+    font-family: Arial, sans-serif; /* Fuente y tipo de letra para todo el cuerpo del documento */
+    background-color: #f9f9f9; /* Color de fondo */
+    margin: 0; /* Elimina el margen alrededor del cuerpo */
+    padding: 0; /* Elimina el relleno interno del cuerpo */
+}
+/* Estilos generales para todas las secciones */
+section {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px 0;
+    margin-bottom: 40px;
+}
+/* Estilos específicos para la sección 1 */
+#seccion1 {
+    background-color: #f0f8ff; /* Azul claro */
+}
+
+#seccion2 .video-container {
+    border-color: #4682b4; /* Azul acero */
+}
+
+#seccion13.video-title {
+    color: #4682b4;
+}
+
+/* Estilos específicos para la sección 2 */
+#seccion2 {
+    background-color: #fff5e6; /* Naranja muy claro */
+}
+
+#seccion2 .video-container {
+    border-color: #ffa500; /* Naranja */
+}
+
+#seccion2 .video-title {
+    color: #ff8c00; /* Naranja oscuro */
+}
+
+/* Estilos específicos para la sección 3 */
+#seccion3 {
+    background-color: #f0fff0; /* Verde muy claro */
+}
+
+#seccion3 .video-container {
+    border-color: #228b22; /* Verde bosque */
+}
+
+#seccion3 .video-title {
+    color: #228b22;
+}
+
+/* Ajustes adicionales para mejorar la diferenciación entre secciones */
+section:not(:last-child) {
+    border-bottom: 2px solid #ddd;
+}
+
+/* Títulos de sección (si decides agregarlos) */
+.section-title {
+    text-align: center;
+    font-size: 24px;
+    margin-bottom: 30px;
+    color: #003865;
+}
+
+/* Ajuste de hover para los contenedores de video en cada sección */
+#seccion1 .video-container:hover {
+    box-shadow: 0 8px 16px rgba(70, 131, 180, 0.47);
+}
+
+#seccion2 .video-container:hover {
+    box-shadow: 0 8px 16px rgba(255, 166, 0, 0.579);
+}
+
+#seccion3 .video-container:hover {
+    box-shadow: 0 8px 16px rgb(34, 139, 34);
+}
+
+/* Estilos para el contenedor de la cuadrícula de videos */
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 20px;
+    row-gap: 40px; /* Aumenta el espacio vertical entre filas */
+    max-width: 1200px;
+    margin: 20px auto;
+    padding: 0 10px;
+}
+
+/* Contenedor de video */
+.video-container {
+    position: relative; /* Posición relativa para los íconos */
+    background-color: #ffffff; /* Color de fondo del contenedor */
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.966); /* Sombra suave */
+    border: 9px solid #003865; /* Borde azul más grueso */
+    border-radius: 8px; /* Bordes redondeados */
+    overflow: hidden; /* Oculta el desbordamiento */
+    transition: transform 0.3s ease-in-out; /* Transición suave al aumentar tamaño */
+    padding-bottom: 50px; /* Espacio adicional en la parte inferior para los íconos */
+}
+
+/* Título del video */
+.video-title {
+    padding: 10px; /* Espaciado interno del título */
+    font-size: 16px; /* Tamaño de fuente */
+    font-weight: bold; /* Texto en negrita */
+    color: #333; /* Color del texto */
+    text-align: center; /* Texto centrado */
+    margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+/* Efecto de aumento y sombra al pasar el cursor */
+.video-container:hover {
+    transform: scale(1.05); /* Aumenta el tamaño en un 5% */
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Añade sombra más pronunciada */
+    z-index: 1; /* Asegura que esté por encima de los íconos de redes sociales */
+}
+
+/* Estilos para los iframes */
+iframe {
+    width: 100%; /* Ancho del 100% del contenedor */
+    height: 200px; /* Altura fija del iframe */
+    border: none; /* Sin borde alrededor del iframe */
+}
+
+/* Estilos para los íconos de redes sociales */
+.social-icons {
+    position: absolute; /* Posición absoluta */
+    bottom: 10px; /* Distancia desde el borde inferior */
+    left: 50%; /* Alinea los íconos en el centro */
+    transform: translateX(-50%); /* Centra los íconos horizontalmente */
+    display: flex; /* Utiliza flexbox para alinear los íconos */
+    justify-content: center; /* Centra los íconos horizontalmente */
+    width: 100%; /* Ancho completo */
+    z-index: 2; /* Asegura que esté por encima del contenedor de video */
+}
+
+.social-icons a {
+    color: #003865; /* Color inicial de los íconos */
+    font-size: 24px; /* Tamaño de fuente de los íconos */
+    margin: 0 5px; /* Espaciado entre los íconos */
+    transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.social-icons a:hover {
+    color: #f7931e; /* Cambia el color al naranja al pasar el cursor */
+}
+
+/* Estilos para el footer y header */
+.footer, .header-title {
+    background-color: #003865; /* Color de fondo azul oscuro */
+    color: white; /* Color del texto */
+    text-align: center; /* Texto centrado */
+    padding: 20px 0; /* Espaciado interno ajustado */
+    margin: 0; /* Sin márgenes */
+}
+
+.header-container {
+    background-color: #003865; /* Color de fondo azul oscuro */
+    color: white; /* Color del texto */
+    text-align: center; /* Texto centrado */
+    padding: 10px 20px; /* Espaciado interno */
+    display: flex; /* Utiliza flexbox para alinear los elementos */
+    flex-direction: column; /* Alinea los elementos en columna */
+    align-items: center; /* Alinea verticalmente al centro */
+}
+
+/* Imagen del logo */
+.header-logo {
+    position: absolute; /* Posición absoluta */
+    top: 12px; /* Distancia desde el borde superior */
+    left: 30%; /* Centra horizontalmente */
+    transform: translateX(-50%); /* Centra horizontalmente */
+    height: 120px; /* Ajusta la altura del logo */
+    z-index: 1; /* Asegura que esté por encima del texto */
+}
+
+.navbar ul {
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
+    background-color: #003865; /* Color de fondo del menú */
+}
+
+.navbar li {
+    float: left;
+}
+
+.navbar li a {
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+}
+
+.navbar li a:hover {
+    background-color: #256AA2; /* Color de fondo al pasar el cursor */
+}
+
+.dropdown:hover .dropdown-content {
+    display: block;
+}
+
+.dropdown-content {
+    display: none;
+    position: absolute;
+    background-color: #f9f9f9; /* Color de fondo del menú desplegable */
+    box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+    z-index: 1;
+}
+
+.dropdown-content li {
+    display: block;
+}
+
+.dropdown-content li a {
+    color: #ffffff;
+    padding: 12px 16px;
+    text-decoration: none;
+    display: block;
+    text-align: left;
+}
+
+.dropdown-content li a:hover {
+    background-color: #256AA2; /* Color de fondo al pasar el cursor */
+}
+.title {
+    text-align: center;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.title h1 {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #ffffff00; /* Color de fondo azul oscuro */
+    color: rgb(0, 0, 0); /* Texto blanco */
+    border-radius: 5px;
+    margin: 0 auto; /* Centra el título horizontalmente */
+}
+
