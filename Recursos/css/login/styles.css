@@ -1,8 +1,7 @@
 body {
     margin: 0;
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-weight: 700;
-    background: url('img/Fd.png') no-repeat center center fixed;
+    font-family: Arial, sans-serif;
+    background: url('/Recursos/img/img_log/Fd.png') no-repeat center center fixed;
     background-size: cover;
     display: flex;
     justify-content: flex-start;
@@ -13,9 +12,10 @@ body {
 .login-container {
     margin-left: 50px;
     background: rgba(255, 255, 255, 0.9);
-    padding: 70px;
+    padding: 50px;
     border-radius: 20px;
-    background-color: #FFFFFF;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #ffffff;
 }
 
 .login-form {
@@ -25,7 +25,9 @@ body {
 
 .login-form h2 {
     text-align: center;
-    color: #FA4616;
+    color: #FF5722;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 700;
 }
 
 .input-group {
@@ -37,6 +39,8 @@ body {
     margin-bottom: 5px;
     color: #003865;
     font-weight: bold;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 600;
 }
 
 .input-group label i {
@@ -46,12 +50,10 @@ body {
 .input-group input, .btn-login {
     width: 100%;
     padding: 10px;
-    border: 1px solid #ce3d3d;
+    border: 1px solid #ccc;
     border-radius: 40px;
     font-size: 16px;
     box-sizing: border-box;
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-weight: 600;
 }
 
 .input-group input {
@@ -59,7 +61,7 @@ body {
 }
 
 .btn-login {
-    background-color: #FA4616;
+    background-color: #Fa4616;
     border: none;
     color: white;
     cursor: pointer;
@@ -71,7 +73,7 @@ body {
 }
 
 .btn-login:hover {
-    background-color: #5F8DB5;
+    background-color: #5f8db5;
 }
 
 .social-login {
@@ -108,6 +110,11 @@ body {
     font-weight: 600;
 }
 
+
+.create-account:hover {
+    text-decoration: underline;
+    
+}
 
 /* Media Queries for Responsiveness */
 @media (max-width: 767px) {
