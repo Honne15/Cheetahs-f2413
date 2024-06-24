@@ -11,3 +11,15 @@ document.getElementById('loginForm').addEventListener('submit', function(event) 
         alert('Por favor, complete todos los campos.');
     }
 });
+document.addEventListener('DOMContentLoaded', function() {
+    const btnFacebook = document.getElementById('btn-facebook');
+    const btnGoogle = document.getElementById('btn-google');
+
+    btnFacebook.addEventListener('click', function() {
+        window.location.href = 'https://www.facebook.com/login';
+    });
+
+    btnGoogle.addEventListener('click', function() {
+        window.location.href = 'https://accounts.google.com/signin';
+    });
+});
