@@ -1,3 +1,4 @@
+//Javascript para el menu principal
 const menuIcon = document.getElementById('menuIcon');
 const mainMenu = document.querySelector('.main-menu');
 
@@ -5,6 +6,7 @@ menuIcon.addEventListener('click', () => {
   mainMenu.classList.toggle('visible');
 });
 
+//Javasript para el carrusel que va en los libros
 var swiper = new Swiper(".books-container-wrappers", {
   slidesPerView: 4, // Mostrar 4 libros a la vez
   spaceBetween: 20,
@@ -29,3 +31,14 @@ var swiper = new Swiper(".books-container-wrappers", {
     prevEl: ".swiper-button-prev",
   },
 });
+
+//Javascript para abrir los PDFs
+function openBook(pdfUrl) {
+  document.getElementById('pdfFrame').src = pdfUrl;
+  document.getElementById('pdfViewer').style.display = "block";
+}
+
+function closeBook() {
+  document.getElementById('pdfFrame').src = "";
+  document.getElementById('pdfViewer').style.display = "none";
+}
