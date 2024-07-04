@@ -35,7 +35,7 @@ h1 {
 h2 {
   font-family: "Be Vietnam Pro", sans-serif;
   font-weight: 600;
-  color: var(--color-title);
+  color: var(--color-subtitle);
   font-size: 200%;
   margin-top: 2%;
   text-align: center;
@@ -629,19 +629,19 @@ ul .icons-options-list {
 }
 
 .title-book h2{
-  color: var(--color-subtitle);
-  font-size: 14.5px;
+  color: var(--color-title);
+  font-size: 16px;
   font-weight: bold;
   margin: 0;
   margin-top: -7%;
 }
 
 .title-book h2:hover{
-  color: #7A7A7A;
+  color: var(--color-subtitle);
 }
 
 h2:hover{
-  color: var(--color-principal);
+  color: #256AA2;
 }
 
 .view-icons{
@@ -653,7 +653,7 @@ h2:hover{
 .links-icons{
   text-decoration: none;
   color: #fff;
-  background-color: var(--color-background1);
+  background-color: var(--color-principal);
   font-size: 130%;
   padding: 5px 8px;
   border-radius: 25px;
@@ -662,7 +662,7 @@ h2:hover{
 }
 
 .links-icons:hover{
-  background-color: #256AA2;
+  background-color: #ff714b;
 }
 
 .books-container-wrapper {

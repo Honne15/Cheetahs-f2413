@@ -653,7 +653,7 @@ h2:hover{
 .links-icons{
   text-decoration: none;
   color: #fff;
-  background-color: var(--color-background1);
+  background-color: var(--color-principal);
   font-size: 130%;
   padding: 5px 8px;
   border-radius: 25px;
@@ -662,7 +662,7 @@ h2:hover{
 }
 
 .links-icons:hover{
-  background-color: #256AA2;
+  background-color: #ff714b;
 }
 
 .books-container-wrapper {
