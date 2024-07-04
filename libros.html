@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="icon" href="/Recursos/img/img_libros/logo.png" type="image/x-icon">
+    <link rel="icon" href="/Recursos/img/Logo_horinzontal.png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
@@ -16,6 +16,7 @@
     <link rel="stylesheet" href="/Recursos/css/libros/libros.css">
     <title>Libros</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf_viewer.min.css" />
 </head>
 
 <body>
@@ -162,7 +163,7 @@
                         <h2>¡A que te cojo ratón!</h2>
                     </div>
                     <div class="view-icons">
-                        <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                        <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/A_QUE_TE_COJO_RATON.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                         <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                         <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                         <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -180,7 +181,7 @@
                         <h2>Salud para contar</h2>
                     </div>
                     <div class="view-icons">
-                        <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                        <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/SALUD_PARA_CONTAR.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                         <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                         <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                         <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -198,7 +199,7 @@
                         <h2>El hombre y su cultura</h2>
                     </div>
                     <div class="view-icons">
-                        <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                        <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/EL_HOMBRE_Y_SU_CULTURA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                         <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                         <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                         <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -216,7 +217,7 @@
                         <h2>Tiempo de hacer</h2>
                     </div>
                     <div class="view-icons">
-                        <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                        <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/TIEMPO_DE_HACER.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                         <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                         <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                         <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -235,7 +236,7 @@
                             <h2>Érase una vez en colombia</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/ERASE_UNA_VEZ_EN_COLOMBIA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -249,7 +250,7 @@
                             <h2>Los viajes del viejo Jacobo</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LOS_VIAJES_DEL_VIEJO_JACOBO.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -263,7 +264,7 @@
                             <h2>Lecturas fantásticas</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LITERATURA_FANTASTICA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -277,7 +278,7 @@
                             <h2>Historias y lugares </h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/HISTORIAS_Y_LUGARES.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -297,7 +298,7 @@
                             <h2>Del campo a la mesa</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/DEL_CAMPO_A_LA_MESA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -311,7 +312,7 @@
                             <h2>Tan distintos y parientes</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/TAN_DISTINTOS_Y_PARIENTES.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -331,7 +332,7 @@
                             <h2>Planeta vivo</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/PLANETA_VIVO.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -345,7 +346,7 @@
                             <h2>Los secretos de los animales</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LOS_SECRETOS_DE_LOS_ANIMALES.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -368,7 +369,7 @@
                             <h2>Entre cuento y cuento</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/ENTRE_CUENTO_Y_CUENTO.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -383,7 +384,7 @@
                             <h2>Cuentos para desenredar enredos</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/CUENTOS_PARA_DESENREDAR_ENREDOS.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -398,7 +399,7 @@
                             <h2>Cuentos maravillosos</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/CUENTOS_MARAVILLOSOS.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -413,7 +414,7 @@
                             <h2>Cuentos para contar</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/CUENTOS_PARA_CONTAR.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -428,7 +429,7 @@
                             <h2>Cuentos y pasatiempos</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/CUENTOS_Y_PASATIEMPOS.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -443,7 +444,7 @@
                             <h2>Lecturas para todos los días</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LECTURAS_PARA_TODOS_LOS_DIAS.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -469,7 +470,7 @@
                             <h2>Con los pelos de punta</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/CON_LOS_PELOS_DE_PUNTA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -484,7 +485,7 @@
                             <h2>La Tierra, el cielo y más allá</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LA_TIERRA_EL_CIELO_Y_MAS_ALLA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -499,7 +500,7 @@
                             <h2>Todo lo contrario</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/TODO_LO_CONTRARIO.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -514,7 +515,7 @@
                             <h2>Más claro no canta un gallo</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/MAS_CLARO_NO_CANTA_UN_GALLO.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -529,7 +530,7 @@
                             <h2>Calor de hogar</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/CALOR_DE_HOGAR.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -544,7 +545,7 @@
                             <h2>Los primeros años</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LOS_PRIMEROS_ANOS.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -567,7 +568,7 @@
                             <h2>Los secretos de las plantas</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LOS_SECRETOS_DE_LAS_PLANTAS.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -581,7 +582,7 @@
                             <h2>La finca viva</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LA_FINCA_VIVA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -595,7 +596,7 @@
                             <h2>La casa y el campo</h2>
                         </div>
                         <div class="view-icons">
-                            <a class="links-icons" href="#"><i class="fa-solid fa-book-open-reader"></i></a>
+                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LA_CASA_Y_EL_CAMPO.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
                             <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
                             <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
@@ -604,7 +605,14 @@
                 </div>
             </div>
         </div>
-        
+
+        <div id="pdfViewer" class="modal">
+            <div class="modal-content">
+                <span class="close" onclick="closeBook()">&times;</span>
+                <iframe id="pdfFrame" src="" width="100%" height="600px"></iframe>
+            </div>
+        </div>
+
         </div>
     </main>
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
