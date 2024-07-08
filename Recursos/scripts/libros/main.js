@@ -259,3 +259,6 @@ function filterBooksByCategory(category) {
     }
   });
 }
+
+window.conCategoria = conCategoria;
+
