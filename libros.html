@@ -25,21 +25,11 @@
     <div class="box-books">
         <div class="image-logo">  <!--Imagen del logo-->
             <img class="image-logoh" src="/Recursos/img/Logo_horinzontal.png" alt="Logo de secretos para contar">
-        </div>     
-        
-        <div class="search">  <!--Este es el buscador-->
-            <input type="text" name="text" class="input" id="input" placeholder="Search">
-            <label for="input" class="labelforsearch">
-                <svg viewBox="0 0 512 512" class="searchIcon">
-                <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>
-            </label>
-            
-        <div class="border"></div>
-            <button class="micButton">
-            <svg viewBox="0 0 384 512" class="micIcon">
-                <path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z"></path></svg>
-            </button>
         </div>   
+        
+        <div class="title-header">
+            <h1>Camino de relatos</h1>
+        </div>
         
         <label class="ui-switch">  <!--Este es el switch-->
             <input type="checkbox">
@@ -55,7 +45,7 @@
         </div>
     </header>     
     
-     <!--Este es el nav, la barra azul-->   <!--Desde aqui empienzan los demas iconos-->
+     <!--Este es el nav, la barra azul--> 
     <nav class="sidebar">
         
         <div class="icons">   
@@ -96,527 +86,103 @@
                 </li>
             </ul>
         </div>
-        <div class="img-container">
-            <img class="img-white" src="Recursos/img/img_libros/logo-azul.webp" alt="Logo blanco de Secretos para contar">
-        </div>
     </nav>
     
     <main>
          <!--Aqui comienza el contenido de la pagina-->
          <div class="banner">
-            <img class="image-banner" src="/Recursos/img/img_libros/bannerli.jpg" alt="Dos niños saltando y sonriendo, hay un libro en todo el centro, el fondo es un cielo y un poco de hierva y arboles, y hay una ardilla y un erizo">
+            <img class="image-banner" src="/Recursos/img/img_libros/bannerli.jpg" alt="Dos niños sentados leyendo un libro">
+            <img class="image-books" src="/Recursos/img/img_libros/Libros.png" alt="Dos niños animados volando en un libro">
 
         <div class="category">
             <h1>Aquí comienza tu aventura</h1>
             <div class="category-container">
                 <h2 class="text-category">Click aquí y encuentra lo que quieres leer</h2>
-                    <ul class="list-menu">
-                        <li class="icon-menu"><i class="fa-solid fa-bars fa-beat-fade"></i><a href="#"></a>
-                            <ul class="list-books">
-                                <li class="list-categories"><a href="#">Juego</a></li>
-                                <li class="list-categories"><a href="#">Salud</a></li>
-                                <li class="list-categories"><a href="#">Cultura</a></li>
-                                <li class="list-categories"><a href="#">Para hacer</a></li>
-                                <li class="list-categories"><a href="#">Historia</a></li>
-                                <li class="list-categories"><a href="#">Cuentos</a></li>
-                                <li class="list-categories"><a href="#">Familia</a></li>
-                                <li class="list-categories"><a href="#">Cocina</a></li>
-                                <li class="list-categories"><a href="#">Animales</a></li>
-                                <li class="list-categories"><a href="#">Plantas</a></li>
-                                <li class="list-categories"><a href="#">Audiolibros</a></li>
+                    <ul name="ddlCategorias" id="ddlCategorias" class="list-menu">
+                        <li class="icon-menu" id="menuCate"><i class="fa-solid fa-globe fa-beat-fade"></i><a href="#"></a>
+                            <ul class="list-cate">
+                                <li class="list-categories" value="todos">Todos</li>
+                                <li class="list-categories" value="juego">Juego</li>
+                                <li class="list-categories" value="salud">Salud</li>
+                                <li class="list-categories" value="cultura">Cultura</li>
+                                <li class="list-categories" value="hacer">Hacer</li>
+                                <li class="list-categories" value="historia">Historia</li>
+                                <li class="list-categories" value="cuentos">Cuentos</li>
+                                <li class="list-categories" value="familia">Familia</li>
+                                <li class="list-categories" value="cocina">Cocina</li>
+                                <li class="list-categories" value="animales">Animales</li>
+                                <li class="list-categories" value="plantas">Plantas</li>
+                                <li class="list-categories" value="audiolibros">Audiolibros</li>
                             </ul>
                         </li>
                     </ul>
                 </div>
             </div>
-            <!--<img class="bird" src="/Recursos/img/img_libros/pajaro1.png" alt="Pájaro encima de unos libros">-->
+            
+            <div class="search">  <!--Este es el buscador-->
+                <input type="text" name="text" class="input" id="input" placeholder="Search">
+                <label for="input" class="labelforsearch">
+                    <svg viewBox="0 0 512 512" class="searchIcon">
+                    <path d="M416 208c0 45.9-14.9 88.3-40 122.7L502.6 457.4c12.5 12.5 12.5 32.8 0 45.3s-32.8 12.5-45.3 0L330.7 376c-34.4 25.2-76.8 40-122.7 40C93.1 416 0 322.9 0 208S93.1 0 208 0S416 93.1 416 208zM208 352a144 144 0 1 0 0-288 144 144 0 1 0 0 288z"></path></svg>
+                </label>
+                
+            <div class="border"></div>
+                <button class="micButton">
+                <svg viewBox="0 0 384 512" class="micIcon">
+                    <path d="M192 0C139 0 96 43 96 96V256c0 53 43 96 96 96s96-43 96-96V96c0-53-43-96-96-96zM64 216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 89.1 66.2 162.7 152 174.4V464H120c-13.3 0-24 10.7-24 24s10.7 24 24 24h72 72c13.3 0 24-10.7 24-24s-10.7-24-24-24H216V430.4c85.8-11.7 152-85.3 152-174.4V216c0-13.3-10.7-24-24-24s-24 10.7-24 24v40c0 70.7-57.3 128-128 128s-128-57.3-128-128V216z"></path></svg>
+                </button>
+            </div>   
+        </main>
         
+        <section>
+            <form id="categorias" action="/leerlibro.html?id=" method="post">
+                <section class="init">
+                
+                    <div class="list" id="listbooks">
+                        
+                    </div>
+                </section>
+            </form>
+        </section>
 
-            <div class="icons-options">
-                <p>Estos iconos estarán en cada uno de los libros para indicarte las opciones que puedes realizar:</p>
-                <ul class="icons-options-list">
-                    <li class="iconop">
-                        <i class="fa-solid fa-book-open-reader"><span class="iconops1">Leer</span></i>
-                    </li>
-                    <li class="iconop">
-                        <i class="fa-solid fa-circle-play"><span class="iconops1">Escuchar</span></i>
-                    </li>
-                    <li class="iconop">
-                        <i class="fa-solid fa-bookmark"><span class="iconops1">Guardar</span></i>
-                    </li>
-                    <li class="iconop">
-                        <i class="fa-regular fa-circle-down"><span class="iconops1">Descargar</span></i>
-                    </li>
+        <footer>
+            <div>
+                <img class="img-boy" src="/Recursos/img/img_libros/nino.png" alt="Niño sentado con un libro en la mano">
+            </div>
+            <div class="footer-content">
+                <div class="footer-section">
+                    <h2>Número</h2>
+                    <div class="line1"></div>
+                    <p>(57) 604 322 06 90</p>
                 </div>
-                <!--<img class="img-girl" src="/Recursos/img/img_libros/ilustracion.png" alt="Muñequita con un libro en la mano">-->
-                <img class="img-kids" src="/Recursos/img/img_libros/banner1.jpg" alt="Cuatro niños con un libro en la mano mirando a la cámara sonriendo">
-
-        <!--Aqui empieza todo el contenido de los libros-->
-        <div class="books-container-wrapper">
-
-        <div class="category-container-books">
-            <div class="title-category"><h2>Juego</h2></div>   
-            <div class="books-container">
-                <img class="img-front" src="Recursos/img/img_libros/portada-a-que-te-cojo-raton.webp" alt="Libro A que te cojo ratón">
-                <div class="container-content">
-                    <div class="title-book">
-                        <h2>¡A que te cojo ratón!</h2>
-                    </div>
-                    <div class="view-icons">
-                        <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/A_QUE_TE_COJO_RATON.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                        <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                        <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                        <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                    </div>
+                <div class="footer-section">
+                    <h2>Email</h2>
+                    <div class="line2"></div>
+                    <p>info@secretosparacontar.org</p>
+                </div>
+                <div class="footer-section">
+                    <h2>Ubicación</h2>
+                    <div class="line3"></div>
+                    <p>Calle 11A #43B - 41</p>
                 </div>
             </div>
-        </div>
-        
-        <div class="category-container-books">
-            <div class="title-category"><h2>Salud</h2></div>   
-            <div class="books-container">
-                <img class="img-front" src="Recursos/img/img_libros/portada-salud-para-contar.webp" alt="Libro Salud para contar">
-                <div class="container-content">
-                    <div class="title-book">
-                        <h2>Salud para contar</h2>
-                    </div>
-                    <div class="view-icons">
-                        <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/SALUD_PARA_CONTAR.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                        <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                        <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                        <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                    </div>
+            <div class="footer-bottom">
+                <h2>&copy; Secretos para contar</h2>
+                <div class="icons-foo"></div>
+                <a href="https://www.facebook.com/secretosparacontar?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                <a href="https://www.instagram.com/secretosparacontar?igsh=emE1MGUyZ2dpMXl0" target="_blank"><i class="fab fa-instagram"></i></a>
+                <a href="https://wa.me/+57604 322 06 90" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                <a href="https://secretosparacontar@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                <a href="https://www.youtube.com/c/FundaciónSecretosparaContar" target="_blank"><i class="fab fa-youtube"></i></a>
                 </div>
             </div>
-        </div>
 
-        <div class="category-container-books">
-            <div class="title-category"><h2>Cultura</h2></div>   
-            <div class="books-container">
-                <img class="img-front" src="Recursos/img/img_libros/portada-el-hombre-y-su-cultura.webp" alt="Libro El hombre y su cultura">
-                <div class="container-content">
-                    <div class="title-book">
-                        <h2>El hombre y su cultura</h2>
-                    </div>
-                    <div class="view-icons">
-                        <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/EL_HOMBRE_Y_SU_CULTURA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                        <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                        <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                        <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
+                   
+        </footer>
 
-        <div class="category-container-books">
-            <div class="title-category"><h2>Para hacer</h2></div>   
-            <div class="books-container">
-                <img class="img-front" src="Recursos/img/img_libros/portada-tiempo-de-hacer.webp" alt="Libro Tiempo de hacer">
-                <div class="container-content">
-                    <div class="title-book">
-                        <h2>Tiempo de hacer</h2>
-                    </div>
-                    <div class="view-icons">
-                        <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/TIEMPO_DE_HACER.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                        <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                        <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                        <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="category-container-books">
-            <div class="title-category"><h2>Historia</h2></div>
-            <div class="books-container-wrapper">
-                <div class="books-container">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-erase-una-vez-en-colombia.webp" alt="Libro Érase una vez en colombia">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Érase una vez en colombia</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/ERASE_UNA_VEZ_EN_COLOMBIA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="books-container">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-los-viajes.webp" alt="Libro viajes del viejo Jacobo">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Los viajes del viejo Jacobo</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LOS_VIAJES_DEL_VIEJO_JACOBO.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="books-container">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-lecturas-fantasticas.webp" alt="Libro Lecturas fantásticas">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Lecturas fantásticas</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LITERATURA_FANTASTICA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="books-container">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-historias-y-lugares.webp" alt="Libro Historias y lugares ">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Historias y lugares </h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/HISTORIAS_Y_LUGARES.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
 
-        <div class="category-container-books">
-            <div class="title-category"><h2>Cocina</h2></div>
-            <div class="books-container-wrapper">
-                <div class="books-container">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-del-campo-a-la-mesa.webp" alt="Libro Del campo a la mesa">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Del campo a la mesa</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/DEL_CAMPO_A_LA_MESA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="books-container">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-tan-distintos-y-parientes.webp" alt="Libro Tan distintos y parientes">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Tan distintos y parientes</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/TAN_DISTINTOS_Y_PARIENTES.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        
-        <div class="category-container-books">
-            <div class="title-category"><h2>Animales</h2></div>
-            <div class="books-container-wrapper">
-                <div class="books-container">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-planeta-vivo.webp" alt="Libro Planeta vivo">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Planeta vivo</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/PLANETA_VIVO.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="books-container">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-los-secretos-de-los-animales.webp" alt="Libro Los secretos de los animales">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Los secretos de los animales</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LOS_SECRETOS_DE_LOS_ANIMALES.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
+    <script src="/Recursos/scripts/libros/main.js"></script>
 
-        <div class="category-container-books">
-            <div class="title-category"><h2>Cuentos</h2></div>
-            <div class="carousel-container">
-            <div class="books-container-wrappers swiper">
-                <div class="swiper-wrapper">
-
-                <div class="swiper-slide books-containers">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-entre-cuento-y-cuento.webp" alt="Libro Entre cuento y cuento">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Entre cuento y cuento</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/ENTRE_CUENTO_Y_CUENTO.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide books-containers">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-para-desenredar-enredos.webp" alt="Libro Cuentos para desenredar enredos">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Cuentos para desenredar enredos</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/CUENTOS_PARA_DESENREDAR_ENREDOS.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide books-containers">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-cuentos-maravillosos.webp" alt="Libro Cuentos maravillosos">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Cuentos maravillosos</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/CUENTOS_MARAVILLOSOS.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide books-containers">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-cuentos-para-contar.webp" alt="Libro Cuentos para contar">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Cuentos para contar</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/CUENTOS_PARA_CONTAR.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide books-containers">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-cuentos-y-pasatiempos.webp" alt="Libro Cuentos y pasatiempos">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Cuentos y pasatiempos</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/CUENTOS_Y_PASATIEMPOS.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide books-containers">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-lecturas-para-todos-los-dias.webp" alt="Libro Lecturas para todos los días">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Lecturas para todos los días</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LECTURAS_PARA_TODOS_LOS_DIAS.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-
-        <div class="category-container-books">
-            <div class="title-category"><h2>Familia</h2></div>
-            <div class="carousel-container">
-            <div class="books-container-wrappers swiper">
-                <div class="swiper-wrapper">
-
-                <div class="swiper-slide books-containers">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-con-los-pelos-de-punta.webp" alt="Libro Con los pelos de punta">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Con los pelos de punta</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/CON_LOS_PELOS_DE_PUNTA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide books-containers">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-la-tierra-el-cielo.webp" alt="Libro La Tierra el cielo y más allá">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>La Tierra, el cielo y más allá</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LA_TIERRA_EL_CIELO_Y_MAS_ALLA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide books-containers">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-todo-lo-contrario.webp" alt="Libro Todo lo contrario">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Todo lo contrario</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/TODO_LO_CONTRARIO.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide books-containers">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-mas-claro-no-canta-un-gallo.webp" alt="Libro Más claro no canta un gallo">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Más claro no canta un gallo</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/MAS_CLARO_NO_CANTA_UN_GALLO.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide books-containers">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-calor-de-hogar.webp" alt="Libro Calor de hogar">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Calor de hogar</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/CALOR_DE_HOGAR.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-
-                <div class="swiper-slide books-containers">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-los-primeros-anos.webp" alt="Libro Los primeros años">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Los primeros años</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LOS_PRIMEROS_ANOS.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            </div>
-            <div class="swiper-button-next"></div>
-            <div class="swiper-button-prev"></div>
-        </div>
-
-        <div class="category-container-books">
-            <div class="title-category"><h2>Plantas</h2></div>
-            <div class="books-container-wrapper">
-                <div class="books-container">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-los-secretos-de-las-plantas.webp" alt="Libro Los secretos de las plantas">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>Los secretos de las plantas</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LOS_SECRETOS_DE_LAS_PLANTAS.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="books-container">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-la-finca-viva.webp" alt="Libro La finca viva">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>La finca viva</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LA_FINCA_VIVA.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="books-container">
-                    <img class="img-front" src="Recursos/img/img_libros/portada-casa-y-campo.webp" alt="Libro La casa y el campo">
-                    <div class="container-content">
-                        <div class="title-book">
-                            <h2>La casa y el campo</h2>
-                        </div>
-                        <div class="view-icons">
-                            <a class="links-icons" href="#" onclick="openBook('/Recursos/pdfs/LA_CASA_Y_EL_CAMPO.pdf'); return false;"><i class="fa-solid fa-book-open-reader"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-circle-play"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-solid fa-bookmark"></i></a>
-                            <a class="links-icons" href="#"><i class="fa-regular fa-circle-down"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-
-        <div id="pdfViewer" class="modal">
-            <div class="modal-content">
-                <span class="close" onclick="closeBook()">&times;</span>
-                <iframe id="pdfFrame" src="" width="100%" height="600px"></iframe>
-            </div>
-        </div>
-
-        </div>
-    </main>
-    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-    <script src="Recursos/scripts/libros/main.js"></script>
 </body>
 </html>
 
