@@ -1,0 +1,140 @@
+*{
+    margin: 0;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+:root {
+    --color-title: #7A7A7A;
+    --color-subtitle: #003865;
+    --color-background1: #5F8DB5;
+    --color-principal: #FA4616;
+}
+  
+body{
+    background-image: url(/Recursos/img/img_libros/fondoninos.jpg);
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-attachment: fixed;
+    min-height: 100vh;
+}
+
+.pdf-viewer-centered {
+   margin-left: 33%;
+}
+
+.favorite{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  background-color: #fff;
+  color: var(--color-subtitle);
+  padding: 10px 14px;
+  border-radius: 30px ;
+  border: 1px var(--color-subtitle) solid;
+  font-family: "Literata", serif;
+  font-size: 200%;
+  text-decoration: none;
+  margin-left: 14%;
+  margin-top: 2.5%;
+}
+
+
+.favorite.visible{
+ visibility: visible;
+ opacity: 1;
+}
+
+/*.tool{
+  visibility: hidden;
+  position: absolute;
+  background-color: var(--color-principal);
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #fff;
+  padding: 5px;
+  border-radius: 5px;
+  font-size: 55%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+
+.tool{
+    transform: translateX(-65%);
+}
+
+i:hover .tool{
+  visibility: visible;
+  opacity: 1;
+}*/
+
+.home{
+  display: flex;
+  align-items: center;
+  position: fixed;
+  background-color: #fff;
+  color: var(--color-subtitle);
+  padding: 10px 8px;
+  border-radius: 30px ;
+  border: 1px var(--color-subtitle) solid;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 600;
+  font-size: 170%;
+  text-decoration: none;
+  margin-left: 2%;
+  margin-top: 2%;
+}
+
+.home .icon {
+  margin-right: 12px;
+}
+
+.home.visible{
+ visibility: visible;
+ opacity: 1;
+}
+
+a{
+ text-decoration: none;
+ color: inherit;
+}
+
+.main-container {
+  display: flex;
+  justify-content: center;
+}
+
+.audio-player {
+  position: fixed;
+  bottom: 0;
+  left: 2%;
+  right: 0;
+  top: 20%;
+  z-index: 1;
+}
+
+.audio-player-iframe {
+  width: 28%;
+  height: 472px;
+  border: none;
+  display: block;
+}
+
+.progress-bar-container {
+    width: 100%;
+    background-color: var(--color-background1);
+    height: 10px;
+    display: none; /* Ocultar por defecto */
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000; /* Asegurar que esté por encima del contenido */
+}
+
+.progress-bar {
+    width: 0%;
+    height: 100%;
+    background-color: var(--color-subtitle);
+    transition: width 0.4s;
+}
+
