@@ -4,6 +4,7 @@ document.getElementById('input').addEventListener('keyup', function (event) {
     }
 });
 
+
 function searchSite() {
     const query = document.getElementById('input').value.toLowerCase();
     const sections = {
@@ -27,8 +28,28 @@ function searchSite() {
         'Leer': 'leer',
         'Aliados': 'aliados',
         'Redes Sociales': 'redes',
-        'Redes': 'redes'
-        // Puedes agregar más términos y sus ids correspondientes aquí
+        'Redes': 'redes',
+        'servicios.': 'servicios',
+        'libros.': 'libros',
+        'objetivo.': 'objetivo',
+        'popular.': 'libros',
+        'favorito.': 'libros',
+        'fundación.': 'fundacion',
+        'leer.': 'leer',
+        'aliados.': 'aliados',
+        'redes sociales.': 'redes',
+        'redes.': 'redes',
+        'Servicios.': 'servicios',
+        'Libros.': 'libros',
+        'Objectivo.': 'objectivo',
+        'Accesibilidad.': 'objectivo',
+        'Popular.': 'libros',
+        'Favorito.': 'libros',
+        'Fundación.': 'fundacion',
+        'Leer.': 'leer',
+        'Aliados.': 'aliados',
+        'Redes Sociales.': 'redes',
+        'Redes.': 'redes'
     };
 
     if (sections[query]) {

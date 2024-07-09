@@ -37,7 +37,7 @@ function startVoiceRecognition() {
             console.log('Speech recognition service disconnected');
         };
     } else {
-        alert('Your browser does not support speech recognition.');
+        alert('Your browser does not support speech recognition');
     }
 }
 
