@@ -312,12 +312,6 @@ a{
   margin-bottom: 20%;
 }
 
-.img-white{
-  width: 95%;
-  height: 90%;
-  
-}
-
 /*Aqui enpieza el contenido de los libros*/
 main{
   margin-top: 0%;
@@ -371,7 +365,7 @@ ul{
   width: 6%;
   border-radius: 170px;
   background-color: #fff;
-  color: #000000;
+  color: var(--color-subtitle);
   font-size: 200%;
   padding: 1%;
   position: relative;
