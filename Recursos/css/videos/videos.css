@@ -1,0 +1,658 @@
+*{
+  margin: 0;
+  padding: 0%;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: Arial, sans-serif; /* Fuente y tipo de letra para todo el cuerpo del documento */
+  background-color: #ffffff; /* Color de fondo */
+  margin: 0; /* Elimina el margen alrededor del cuerpo */
+  padding: 0; /* Elimina el relleno interno del cuerpo */
+  display: flex;
+  min-height: 100vh;
+  gap: 30%;
+  padding-left: 80px;
+}
+
+
+:root {
+  --color-title: #7A7A7A;
+  --color-subtitle: #003865;
+  --color-background1: #5F8DB5;
+  --color-principal: #FA4616;
+}
+
+/* Estilo para el encabezado h1 */
+h1 {
+  /* Centra el texto horizontalmente */
+  text-align: center;
+  /* Fuente personalizada */
+  font-family: "Be Vietnam Pro", sans-serif;
+  /* Grosor de la fuente */
+  font-weight: 700;
+  /* Color del texto (blanco) */
+  color: rgb(0, 0, 0);
+  /* Tamaño de la fuente */
+  font-size: 290%;
+  /* Márgenes para ajustar la posición */
+  margin-left: 2%;
+  margin-top: 1%;
+  margin-bottom: -1%;
+}
+
+h2 {
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 600;
+  color: var(--color-title);
+  font-size: 200%;
+  margin-top: 2%;
+ 
+}
+
+p {
+  font-family: "Literata", serif;
+  text-align: center;
+  margin-left: 1%;
+  margin-top: 2%;
+  margin-bottom: -3%;
+}
+
+
+/*Desde aqui es el header*/
+header{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+ 
+  justify-content: space-between;
+  min-height: 70px;
+  background-color: rgb(255, 255, 255);
+  padding: 0% 5%;
+  margin-left: 80px;
+  z-index: 1000;
+  border-bottom: 2px solid #00000000;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.413);
+}
+
+.box-books{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: space-between;
+}
+
+.image-logo{   /*Imagen del logo*/
+  height: 100px;
+  width: 2%;
+  margin-left: 20%;
+}
+
+/*Desde aqui es el buscador*/
+.search{  
+  display: flex;
+  margin-left: 10%;
+  align-items: center;
+  padding: 7px 40px;
+  background-color: rgb(255, 255, 255);
+  border-radius: 10%;
+  border-style: solid;
+  border-radius: 10px;
+  border-color: #7A7A7A;
+  overflow: hidden;
+  cursor: pointer;
+  box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
+}
+
+.input{
+  width: 130px;
+  border: none;
+  outline: none;
+  font-size: 0.9em;
+  color: #000000;
+}
+
+.labelforsearch{
+  cursor: text;
+  padding: 0px 12px;
+}
+
+.searchIcon{
+  width: 18px;
+  margin-left: -20%;
+}
+
+.border{
+  height: 24px;
+  width: 2px;
+  background-color: var(--color-subtitle);
+}
+
+.micIcon{
+  width: 15px;
+  margin-left: 100%;
+}
+
+.micButton{
+  border: none;
+  background: none;
+  cursor: pointer;
+  padding: 2% 0%;
+}
+
+.searchIcon path{
+  fill: var(--color-principal);
+}
+
+
+
+.micIcon path{
+  fill: #000000;
+}
+
+
+/*Desde aqui es el switch*/
+.ui-switch {
+  align-items: center;
+  margin-left: -10%;
+  /* switch */
+  --switch-bg: #D7D2CB;
+  --switch-width: 48px;
+  --switch-height: 20px;
+  /* circle */
+  --circle-diameter: 32px;
+  --circle-bg: #FA4616;
+  --circle-inset: calc((var(--circle-diameter) - var(--switch-height)) / 2);
+}
+/* switch settings 👇 */
+[data-theme="dark"] {
+  /* Colores del tema oscuro */
+  --background-color: #121212;
+  --text-color: #fff;
+  --header-background: #1F2937;
+  /* ... otros colores oscuros ... */
+}
+
+.ui-switch input {
+  display: none;
+}
+
+.slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background: var(--switch-bg);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
+}
+
+.slider .circle {
+  top: calc(var(--circle-inset) * -1);
+  left: 0;
+  width: var(--circle-diameter);
+  height: var(--circle-diameter);
+  position: absolute;
+  background: var(--circle-bg);
+  border-radius: inherit;
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTkuMzA1IDEuNjY3VjMuNzVoMS4zODlWMS42NjdoLTEuMzl6bS00LjcwNyAxLjk1bC0uOTgyLjk4Mkw1LjA5IDYuMDcybC45ODItLjk4Mi0xLjQ3My0xLjQ3M3ptMTAuODAyIDBMMTMuOTI3IDUuMDlsLjk4Mi45ODIgMS40NzMtMS40NzMtLjk4Mi0uOTgyek0xMCA1LjEzOWE0Ljg3MiA0Ljg3MiAwIDAwLTQuODYyIDQuODZBNC44NzIgNC44NzIgMCAwMDEwIDE0Ljg2MiA0Ljg3MiA0Ljg3MiAwIDAwMTQuODYgMTAgNC44NzIgNC44NzIgMCAwMDEwIDUuMTM5em0wIDEuMzg5QTMuNDYyIDMuNDYyIDAgMDExMy40NzEgMTBhMy40NjIgMy40NjIgMCAwMS0zLjQ3MyAzLjQ3MkEzLjQ2MiAzLjQ2MiAwIDAxNi41MjcgMTAgMy40NjIgMy40NjIgMCAwMTEwIDYuNTI4ek0xLjY2NSA5LjMwNXYxLjM5aDIuMDgzdi0xLjM5SDEuNjY2em0xNC41ODMgMHYxLjM5aDIuMDg0di0xLjM5aC0yLjA4NHpNNS4wOSAxMy45MjhMMy42MTYgMTUuNGwuOTgyLjk4MiAxLjQ3My0xLjQ3My0uOTgyLS45ODJ6bTkuODIgMGwtLjk4Mi45ODIgMS40NzMgMS40NzMuOTgyLS45ODItMS40NzMtMS40NzN6TTkuMzA1IDE2LjI1djIuMDgzaDEuMzg5VjE2LjI1aC0xLjM5eiIgLz4KPC9zdmc+");
+  background-repeat: no-repeat;
+  background-position: center center;
+  -webkit-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  -o-transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  transition: left 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms, -webkit-transform 150ms cubic-bezier(0.4, 0, 0.2, 1) 0ms;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+  -ms-flex-align: center;
+  align-items: center;
+  -webkit-box-pack: center;
+  -ms-flex-pack: center;
+  justify-content: center;
+  box-shadow: 0px 2px 1px -1px rgba(0,0,0,0.2), 0px 1px 1px 0px rgba(0,0,0,0.14), 0px 1px 3px 0px rgba(0,0,0,0.12);
+  ;
+}
+
+.slider .circle::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  background: #D7D2CB;
+  border-radius: inherit;
+  -webkit-transition: all 500ms;
+  -o-transition: all 500ms;
+  transition: all 500ms;
+  opacity: 0;
+}
+
+/*Acciones del switch*/
+.ui-switch input:checked+.slider .circle {
+  left: calc(100% - var(--circle-diameter));
+  background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
+}
+
+.ui-switch input:active+.slider .circle::before {
+  -webkit-transition: 0s;
+  -o-transition: 0s;
+  transition: 0s;
+  opacity: 1;
+  width: 0;
+  height: 0;
+}
+
+/*Desde aqui es el icono de usuario*/
+.user-icon{
+  display: flex;
+  align-items: center;
+  margin-right: 10%;
+  margin-left: -10%;
+}
+
+.user-icon i {
+  border-radius: 50%;
+  background-color: #D7D2CB;
+  padding: 25%;
+  font-weight: bold;
+  color: black;
+  font-size: 1.5rem;
+}
+ 
+i:hover .usertip{       /*Aqui esta el hover del nombre del icono de usuario*/
+  visibility: visible;
+  opacity: 1;
+}
+
+.usertip{
+  visibility: hidden;
+  position: absolute;
+  background-color: var(--color-principal);
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  margin-left: -3.4%;
+  font-size: 70%;
+  opacity: 0;
+  transition: opacity 0.3s;
+}
+/*Desde aqui es el nav, la barra azul*/
+nav.sidebar{  
+  position: fixed; 
+  top: 0px; 
+  left: 0;
+  width: 80px;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: var(--color-background1);
+  border-right: rgba(255, 0, 0, 0);
+  border-width: 15%;
+  border-left: transparent;
+  border-top: transparent;
+  border-bottom: transparent;
+  border-style: solid;
+
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.sidebar ul{
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+ul{
+  list-style: none;
+  text-align: center;
+}
+
+.menu-icon{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  color: var(--color-subtitle);
+  font-size: 220%;
+  position: relative;
+  border-radius: 30px;
+  padding: 10% 70%;;
+  margin-left: -15%;
+  margin-top: 100%;
+}
+
+.main-menu{
+  position: absolute; 
+  top: calc(100% + 10px);
+  left: 0;
+  visibility: hidden;
+  opacity: 0;
+}
+
+.main-menu li{
+  break-inside: avoid;
+}
+
+.main-menu li a{
+  display: flex;
+  align-items: center;
+  width: 100%;
+  background-color: #fff;
+  color: var(--color-subtitle);
+  padding: 8px;
+  border-radius: 30px ;
+  margin-top: 60%;
+  font-family: "Literata", serif;
+  font-size: 70%;
+  text-decoration: none;
+}
+
+.main-menu.visible{
+ visibility: visible;
+ opacity: 1;
+}
+
+.tooltip {
+  visibility: hidden;
+  position: absolute;
+  background-color: var(--color-principal);
+  font-family: "Be Vietnam Pro", sans-serif;
+  color: #fff;
+  padding: 5px;
+  border-radius: 4px;
+  font-size: 65%;
+  opacity: 0;
+  transition: opacity 0.3s;
+  transform: translateX(-50%);
+  left: 50%;
+}
+
+i:hover .tooltip {
+  visibility: visible;
+  opacity: 1;
+}
+
+.tooltips{
+  visibility: hidden;
+  position: absolute;
+}
+
+a{
+  text-decoration: none;
+}
+
+.img-container{
+  margin-bottom: 20%;
+}
+
+.img-white{
+  width: 95%;
+  height: 90%;
+  
+}
+
+@media (max-width: 1248px) {
+  header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 140px; /* Aumentamos la altura del header */
+    z-index: 1000; /* Ajustamos el z-index según sea necesario */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.445); /* Mantenemos la sombra */
+  }
+
+  .search {
+    height: 40%;
+    
+  }
+
+  .image-logoh {
+    display:flexbox; /* Ocultamos la imagen del logo en pantallas más pequeñas */
+   padding: -10%;
+  }
+
+  .image-perfil {
+    height: 30px;
+    width: 30px;
+  }
+
+  .menu-icon {
+    padding: 50% 50%;
+    width: 50%;
+    height: 50%;
+  }
+
+  .box-books {
+    padding-left: -1000;
+  }
+
+  .video-grid {
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajustamos el ancho mínimo según sea necesario */
+    gap: 15px; /* Ajustamos el espacio entre los videos */
+    padding: 10px; /* Ajustamos el padding interno */
+  }
+
+  .video-container {
+    margin-left: auto; /* Ajustamos el margen izquierdo para centrar */
+    margin-right: auto; /* Ajustamos el margen derecho para centrar */
+  }
+
+  /* Ajustes para la sección de contenido (donde está la cuadrícula de videos) */
+  #content {
+    grid-area: content; /* Aseguramos que la sección de contenido tenga el mismo nombre de área */
+    padding-left: 50%; /* Ajustamos el padding izquierdo si es necesario */
+  }
+
+  .box-icon {
+    margin-left: 10px; /* Ajustamos el valor según lo que necesites para mover el contenido más a la izquierda */
+  }
+}
+
+#seccion1 {
+  background-color: #a1bcd400; /* Azul claro */
+}
+
+#seccion2 .video-container {
+  border-color: #4682b4; /* Azul acero */
+}
+
+#seccion2.video-title {
+  color: #4682b4;
+}
+
+/* Estilos específicos para la sección 2 */
+#seccion2 {
+  background-color: #fff5e600; /* Naranja muy claro */
+}
+
+#seccion2 .video-container {
+  border-color: #ffa500; /* Naranja */
+}
+
+#seccion2 .video-title {
+  color: #ff8c00; /* Naranja oscuro */
+}
+
+/* Estilos específicos para la sección 3 */
+#seccion3 {
+  background-color: #00000000; /* Verde muy claro */
+}
+
+#seccion3 .video-container {
+  border-color: #228b22; /* Verde bosque */
+}
+
+#seccion3 .video-title {
+  color: #228b22;
+}
+
+/* Ajustes adicionales para mejorar la diferenciación entre secciones */
+
+
+
+
+/* Ajuste de hover para los contenedores de video en cada sección */
+#seccion1 .video-container:hover {
+  box-shadow: 0 8px 16px rgba(0, 140, 255, 0.47);
+}
+
+#seccion2 .video-container:hover {
+  box-shadow: 0 8px 16px rgba(255, 166, 0, 0.579);
+}
+
+#seccion3 .video-container:hover {
+  box-shadow: 0 8px 16px rgb(34, 139, 34);
+}
+
+
+.videos {
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin-top: 80px; /* Adjust margin as needed */
+}
+
+.video-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  padding: 10px;
+  background-color: #ffffff00;
+  border-radius: 10px;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0);
+  margin-right: auto;
+  margin-left: auto;
+  max-width: 1248px; /* Ajusta el ancho máximo según tu diseño */
+}
+
+
+/* Ajustes para la sección de contenido (donde está la cuadrícula de videos) */
+#content {
+grid-area: content; /* Asegúrate de que la sección de contenido tenga el mismo nombre de área */
+padding-left: 5%; /* Ajusta el padding izquierdo si es necesario */
+}
+ 
+
+
+.video-container {
+  position: relative;
+  background-color: #ffffff;
+  box-shadow: none;
+  border: 6px solid #003865;
+  border-radius: 10px;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  padding-bottom: 33px;
+  margin-left: 1%;
+  margin-top: 20px;
+}
+
+main {
+margin-top: 130px;
+flex: 10;
+}
+
+/* Título del video */
+.video-title {
+  padding: 5px; /* Espaciado interno del título */
+  font-size: 19px; /* Tamaño de fuente */
+  font-weight: bold; /* Texto en negrita */
+  color: #003865; ; /* Color del texto */
+  text-align: center; /* Texto centrado */
+  margin-bottom: 0; /* Elimina el margen inferior */
+}
+
+/* Efecto de aumento y sombra al pasar el cursor */
+.video-container:hover {
+  transform: scale(1.05); /* Aumenta el tamaño en un 5% */
+  box-shadow: 0 8px 16px rgb(255, 255, 255); /* Añade sombra más pronunciada */
+  z-index: 1; /* Asegura que esté por encima de los íconos de redes sociales */
+}
+
+/* Estilos para los iframes */
+iframe {
+  width: 100%; /* Ancho del 100% del contenedor */
+  height: 200px; /* Altura fija del iframe */
+  border: none; /* Sin borde alrededor del iframe */
+}
+
+/* Estilos para los íconos de redes sociales */
+.social-icons {
+  position: absolute; /* Posición absoluta */
+  bottom: 10px; /* Distancia desde el borde inferior */
+  left: 50%; /* Alinea los íconos en el centro */
+  transform: translateX(-50%); /* Centra los íconos horizontalmente */
+  display: flex; /* Utiliza flexbox para alinear los íconos */
+  justify-content: center; /* Centra los íconos horizontalmente */
+  width: 100%; /* Ancho completo */
+  z-index: 2; /* Asegura que esté por encima del contenedor de video */
+}
+
+.social-icons a {
+  color: #003865; /* Color inicial de los íconos */
+  font-size: 24px; /* Tamaño de fuente de los íconos */
+  margin: 0 5px; /* Espaciado entre los íconos */
+  transition: color 0.3s ease; /* Transición suave para el cambio de color */
+}
+
+.social-icons a:hover {
+  color: #f7931e; /* Cambia el color al naranja al pasar el cursor */
+}
+
+
+
+.imagen {
+justify-self: 100%; /* Alinea a la derecha */
+grid-column: 1; /* Ocupa la primera columna */
+grid-row: 1; /* Ocupa la primera fila */
+width: 18%; /* Ajusta el ancho al 70% del contenedor */
+height: auto; /* Ajusta la altura automáticamente */
+}
+
+
+
+.image-logoh {
+height: 100px;
+width: auto;
+margin-left: -20%;
+}
+
+
+#stars {
+/* Fondo de estrellas */
+position: fixed;
+top: 0;
+left: 0;
+width: 100%;
+height: 100%;
+z-index: -1;
+}
+@keyframes sparkle {
+0% {
+  transform: translateY(0) rotate(0deg);
+  opacity: 1;
+}
+100% {
+  transform: translateY(-100vh) rotate(720deg);
+  opacity: 0;
+}
+}
+
+.star {
+/* Estilo para las estrellas */
+position: absolute;
+background-color: #ffffff;
+border-radius: 100%;
+animation: sparkle 10s linear infinite;
+box-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Sombra suave para las estrellas */
+}
+
+
+
