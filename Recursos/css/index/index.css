@@ -1,0 +1,445 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --scrollcolor: #fff;
+    --scrollbackground: #141e27;
+    --color-primary: #000;
+    --color-dark: #1B1B1D;
+    --color-title: #7A7A7A;
+    --color-subtitle: #003865;
+    --color-background1: #5F8DB5;
+    --color-principal: #FA4616;
+  }
+
+body {
+    font-family: "open sans";
+}
+
+.content {
+    padding: 60px 0;
+    width: 90%;
+    max-width: 1000px;
+    margin: auto;
+    overflow: hidden;
+}
+
+.title {
+   color: var(--color-subtitle);
+   font-size: 30px;
+   text-align: center;
+   margin-bottom: 60px;
+   font-family: "Be Vietnam Pro", sans-serif;
+   font-weight: 700;
+}
+
+/*Header*/
+
+header {
+    width: 100%;
+    height: 600px;
+    background: var(--color-title); 
+    background: -webkit-linear-gradient(to right, hsla(204, 26%, 25%, 0.493), hsla(33, 12%, 82%, 0.473)), url(../img/Tallerista-y-grupo-de-niños.jpg);
+    background: linear-gradient(to right, hsla(204, 26%, 25%, 0.76), hsla(33, 12%, 82%, 0.651)), url(/Recursos/img/img_index/Tallerista-y-grupo-de-niños.jpg); 
+    background-size: cover;
+    background-attachment: fixed;
+    position: relative;
+}
+
+nav {
+    text-align: right;
+    padding: 30px 50px 0 0;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 600;
+}
+
+nav > a {
+    background-color: var(--color-principal);
+    color: #ffffff;
+    font-weight: 300;
+    text-decoration: none;
+    margin-right: 10px;
+    padding: 10px;
+    border-radius: 10px;
+}
+
+nav > a:hover {
+    background-color: #FF714B;
+}
+
+.texts-header {
+    display: flex;
+    height: 430px;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    color: #ffffff;
+    flex-direction: column;
+    text-align: center;
+}
+
+.texts-header h1 {
+    font-size: 50px;
+    color: #ffffff;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 700;
+}
+
+.texts-header h2 {
+    font-size: 30px;
+    color: #ffffff;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 600;
+}
+
+.wave {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 150px;
+    overflow: hidden;
+}
+
+svg {
+    height: 100%;
+    width: 100%;
+}
+
+path {
+    stroke: none;
+    fill: #ffffff;
+}
+
+/*About us*/
+
+main .us {
+    padding: 30px 0 60px 0;
+}
+
+.content-us {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.img-abaut-us {
+    width: 48%;
+}
+
+.us .content-text {
+    width: 48%;
+}
+
+.content-text h3 {
+    margin-bottom: 15px;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 600;
+}
+
+.content-text h3 span {
+    background: var(--color-subtitle);
+    color: #ffffff;
+    border-radius: 50%;
+    display: inline-block;
+    text-align: center;
+    width: 30px;
+    height: 30px;
+    padding: 2px;
+    box-shadow: 0 0 6px rgba(0, 0, 0, .5);
+    margin-right: 5px;
+}
+
+.content-text p {
+    padding: 0px 0px 30px 15px;
+    font-family: "Literata", serif;
+    text-align: justify;
+    
+}
+
+/*Gallery*/
+
+.briefcase {
+    background:#D7D2CB;
+}
+
+.gallery-por {
+    display: flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
+}
+
+.img-port {
+    width: 24%;
+    margin-bottom: 10px;
+    height: 300px;
+    overflow: hidden;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 0 6px 0 rgba(0, 0, 0, .5);
+}
+
+.img-port > img {
+    width: 100%;
+    height: 100%;
+    display: block;
+}
+
+.hover-gallery {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    transform: scale(0);
+    background: hsla(214, 91%, 27%, 0.7);
+    transition: transform .5s;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.hover-gallery img {
+    width: 50px;
+}
+
+.hover-gallery p {
+    color: white;
+    font-family: "Literata", serif;
+}
+
+.img-port:hover .hover-gallery {
+    transform: scale(1);
+}
+
+/* Our team */
+
+.about-services{
+    background: #ffffff;
+    padding-bottom: 30px;
+    padding: 30px;
+}
+
+.service-cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.service-ind {
+    width: 28%;
+    text-align: center;
+}
+
+.service-ind img {
+    width: 45%;
+}
+
+.service-ind h3 {
+    margin: 10px 0;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 600;
+}
+
+.service-ind p {
+    font-family: "Literata", serif;
+    text-align: justify;
+}
+
+/* Footer */
+
+footer {
+    background: var(--color-background1);
+    padding: 60px 0 30px 0;
+    margin: auto;
+    overflow: hidden;  
+}
+
+.content-footer {
+    display: flex;
+    width: 70%;
+    justify-content: space-evenly;
+    margin: auto;
+    padding-bottom: 50px;
+    border-bottom: 1px solid white;
+}
+
+.content-foo {
+    text-align: center;
+}
+
+.content-foo h4{
+    color: white;
+    border-bottom: 3px solid #d8d6d6;
+    padding-bottom: 10px;
+    margin-bottom: 10px;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 600;
+}
+
+.content-foo p {
+    color: white;
+    font-family: "Literata", serif;
+    font-size: 18px;
+}
+
+.footer--img {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    margin-top: -120px;
+    margin-left: 980px;
+    margin-bottom: 40px;
+  }
+  
+  .footer--img img {
+    width: 100px;
+    height: 100px;
+  }
+  
+  .footer a {
+    color: white;
+    text-decoration: none;
+    margin: 0 5px;
+  }
+  
+  .footer a:hover {
+    text-decoration: underline;
+  }
+
+
+.title-finish {
+    text-align: center;
+    font-size: 24px;
+    color: white;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 600;
+}
+
+.icons {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icons a i {
+    color: #ffffff;
+    margin: 6px;
+    font-size: 25px;
+}
+
+.icons a i:hover {
+    color: #ccc;
+}
+
+/*Media querys*/
+
+@media screen and (max-width: 900px){
+    header{
+        background-position: center;
+    }
+
+    .content-us {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+
+    .us .content-text {
+        width: 90%;
+    }
+
+    .img-abaut-us {
+        width: 90%;
+    }
+
+    /*Gallery*/
+
+    .img-port {
+        width: 44%;
+    }
+
+    /*Services*/
+
+    .service-cont {
+        justify-content: center;
+        flex-direction: column;
+    }
+
+    .service-ind {
+        width: 100%;
+        text-align: center;
+    }
+
+    .service-ind:nth-child(1), .service-ind:nth-child(2) {
+        margin-bottom: 60px;
+    }
+
+    .service-ind img {
+        width: 50%;
+    }
+}
+
+@media screen and (max-width:500px){
+    nav {
+        text-align: center;
+        padding: 30px 0 0 0;
+    }
+
+    nav > a {
+        margin-right: 5px;
+    }
+
+    .texts-header h1 {
+        font-size: 35px;
+    }
+
+    .texts-header h2 {
+        font-size: 20px;
+    }
+
+    /*About us*/
+
+    .img-abaut-us {
+        margin-bottom: 60px;
+        width: 99%;
+    }
+
+    .us .content-text {
+        width: 95%;
+    }
+
+    /*Gallery*/
+
+    .img-port {
+        width: 99%;
+    }
+
+
+    /*Footer*/
+
+    .content-footer {
+        flex-direction: column;
+        border: none;
+    }
+
+    .content-foo {
+        margin-top: 20px;
+        text-align: center;
+    }
+
+    .content-foo h4 {
+        border-bottom: none;
+    }
+
+    .content-foo p {
+       color: #ccc;
+       border-bottom: 1px solid white;
+       padding-bottom: 20px;
+    }
+
+    .title-finish {
+        font-size: 20px;
+    }
+}
