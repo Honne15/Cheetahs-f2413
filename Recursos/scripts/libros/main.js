@@ -66,6 +66,7 @@ const conCategoria = [
   localStorage.setItem('conCategoria', JSON.stringify(conCategoria));
 
   let divPadre = document.getElementById('listbooks');
+  const searchInput = document.getElementById('searchInput');
 
   conCategoria.forEach((fila, index) => {
       let divHijoPorTitulo = document.createElement('div');
@@ -188,7 +189,7 @@ function filtrarCategoria(filaDeLibro, categoria) {
 const ddlCategorias = document.querySelectorAll('.list-categories');
   ddlCategorias.forEach((categoria) => {
     categoria.addEventListener('click', (event) => {
-      const selectedCategory = event.target.getAttribute('value');
+      const selectedCategory = event.target.getAttribute('data-categoria');
       filterBooksByCategory(selectedCategory);
     localStorage.setItem('conCategoria', JSON.stringify(conCategoria));
     console.log(listaCategorias);
@@ -254,6 +255,78 @@ function filterBooksByCategory(category) {
     }
   });
 }
-
 window.conCategoria = conCategoria;
 
+
+//Buscador funcional 
+let librosFiltrados = [];
+
+// Función para buscar libros por nombre
+function searchBooks() {
+  const searchInput = document.getElementById('searchInput').value.toLowerCase();
+  librosFiltrados = conCategoria.filter(libro => libro[2].toLowerCase().includes(searchInput));
+  mostrarLibros(librosFiltrados);
+}
+
+// Función para mostrar libros en la interfaz
+function mostrarLibros(libros) {
+  const listbooks = document.getElementById('listbooks');
+  listbooks.innerHTML = '';
+
+  libros.forEach(libro => {
+    const divHijoPorTitulo = document.createElement('div');
+    divHijoPorTitulo.classList.add('book-item');
+    let id = libro[0];
+
+    libro.forEach((element, index) => {
+      switch (index) {
+        case 1:
+          const img = document.createElement('img');
+          img.src = element;
+          img.classList.add('book-image');
+          divHijoPorTitulo.appendChild(img);
+          break;
+        case 2:
+          const h2 = document.createElement('h2');
+          h2.textContent = element;
+          h2.classList.add('book-title');
+          divHijoPorTitulo.appendChild(h2);
+          break;
+        case 4:
+          const aDescargar = document.createElement('a');
+          aDescargar.href = element;
+          aDescargar.download = element;
+          aDescargar.classList.add('download-link');
+          aDescargar.innerHTML = '<i class="fa-regular fa-circle-down"></i> Descargar';
+          divHijoPorTitulo.appendChild(aDescargar);
+
+          const aLeer = document.createElement('a');
+          aLeer.href = '/leerlibro.html?id=' + id;
+          aLeer.target = '_blank';
+          aLeer.innerHTML = '<i class="fa-solid fa-book-open-reader"></i> Leer';
+          aLeer.classList.add('read-link');
+          divHijoPorTitulo.appendChild(aLeer);
+          break;
+        case 5:
+          if (element !== '') {
+            const aEscuchar = document.createElement('a');
+            aEscuchar.href = element;
+            aEscuchar.target = '_blank';
+            aEscuchar.innerHTML = '<i class="fa-solid fa-circle-play"></i> Escuchar';
+            aEscuchar.classList.add('listen-link');
+            divHijoPorTitulo.appendChild(aEscuchar);
+          }
+          break;
+        default:
+          break;
+      }
+    });
+
+    listbooks.appendChild(divHijoPorTitulo);
+  });
+}
+
+// Mostrar todos los libros al cargar la página
+window.addEventListener('load', () => {
+  mostrarLibros(conCategoria);
+});
