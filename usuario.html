@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fundación Secretos Para Contar</title>
+    <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous">
+    <link rel="stylesheet" href="/Recursos/css/usuario/stylesu.css">
+    <link rel="icon" href="Recursos/Img/Img__index/logo.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <nav class="sidebar">
+        <div class="icons">   
+            <ul class="main-icon">
+                <li class="menu-icon" id="menuIcon">
+                    <i class="fas fa-bars"></i><span class="tooltips">Menú</span>
+                    <ul class="main-menu">
+                        <li class="main-menu__item">
+                            <a href="#" class="main-menu__link">
+                                <i class="fas fa-house-chimney"></i><span class="tooltip">Inicio</span>
+                            </a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a href="#" class="main-menu__link">
+                                <i class="fas fa-book"></i><span class="tooltip">Libros</span>
+                            </a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a href="educa.html" class="main-menu__link" target="_blank" rel="noopener noreferrer">
+                                <i class="fas fa-chalkboard-user"></i><span class="tooltip">Educa</span>
+                            </a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a href="#" class="main-menu__link">
+                                <i class="fas fa-video"></i><span class="tooltip">Videos</span>
+                            </a>
+                        </li>
+                        <li class="main-menu__item">
+                            <a href="#" class="main-menu__link">
+                                <i class="fas fa-arrow-right-from-bracket"></i><span class="tooltip">Salir</span>
+                            </a>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <!--Este es el switch-->
+    <label class="ui-switch">  
+        <input type="checkbox" id="theme-switch">
+        <div class="slider">
+            <div class="circle"></div>
+        </div>
+    </label>
+    <section class="seccion-perfil-usuario" id="perfil">
+        <div class="perfil-usuario-header">
+            <div class="perfil-usuario-portada" id="backgroundContainer">
+                <div class="perfil-usuario-avatar">
+                    <img id="avatarImage" src="" alt="Avatar">
+                    <button type="button" class="boton-avatar" id="changeAvatarButton">
+                        <i class="far fa-image"></i>
+                    </button>
+                    <input type="file" id="avatarInput" style="display: none;" accept="image/*">
+                </div>
+                <button type="button" class="boton-portada" id="changeBackgroundButton">
+                    <i class="far fa-image"></i> Cambiar fondo
+                </button>
+                <input type="file" id="backgroundInput" style="display: none;" accept="image/*">
+            </div>
+
+        </div>
+        <div class="perfil-usuario-body">
+            <div class="perfil-usuario-bio">
+                <h3 class="titulo">
+                    <span id="username">Nombre Completo</span>
+                    <i class="fas fa-pencil-alt" id="editNameIcon"></i>
+                </h3>
+                <p class="texto" id="bioText">
+                    Pon lo que piensas o lo que te gusta.
+                </p>
+                <button type="button" class="editar-boton" id="editBioButton">Editar presentación</button>
+            </div>
+            <div class="perfil-usuario-footer">
+                <ul class="lista-datos">
+                    <li><i class="icono fas fa-calendar-alt"></i> Fecha de nacimiento: <span id="spanFechaNacimiento"></span></li>
+                    <li><i class="icono fas fa-map-marker-alt"></i> Ubicación: <span id="spanUbicacion"></span></li>
+                    <li><i class="icono fas fa-building"></i> Profesión: <span id="spanProfesion"></span></li>
+                </ul>
+                <button class="editar-datos">Editar datos</button>
+            </div>
+            <div class="redes-sociales">
+                <a href="https://www.facebook.com/secretosparacontar/?ref=pages_you_manage" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
+                <a href="https://www.youtube.com/c/FundaciónSecretosparaContar" class="boton-redes youtube fab fa-youtube"><i class="icon-youtube"></i></a>
+                <a href="https://www.instagram.com/secretosparacontar/?hl=es" class="boton-redes instagram fab fa-instagram"><i class="icon-instagram"></i></a>
+            </div>
+        </div>
+    </section>
+    <section class="section-right">
+        <div class="contenedor-favoritos-notas">
+            <div class="favoritos" id="favoritos">
+                <h3 class="titulo">Libros Favoritos</h3>
+                <ul id="book-list">
+                    <!-- Los libros se añadirán dinámicamente aquí -->
+                </ul>
+                <button type="button" onclick="showAddBookModal()" class="boton-favorito">
+                    <i class="fas fa-heart"></i> Agregar a favoritos
+                </button>
+                <button type="button" onclick="showRemoveBookModal()" class="boton-favorito">
+                    <i class="fas fa-trash"></i> Eliminar libro
+                </button>
+            </div>
+            <!-- Modal para agregar libros -->
+            <div id="addBookModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeAddBookModal()">&times;</span>
+                    <h2>Agregar Libro a Favoritos</h2>
+                    <input type="text" id="newBookTitle" placeholder="Título del libro">
+                    <button type="button" onclick="addBook()">Agregar</button>
+                </div>
+            </div>
+            <!-- Modal para eliminar libros -->
+            <div id="removeBookModal" class="modal">
+                <div class="modal-content">
+                    <span class="close" onclick="closeRemoveBookModal()">&times;</span>
+                    <h2>Eliminar Libro de Favoritos</h2>
+                    <select id="bookSelect">
+                        <!-- Las opciones se generarán dinámicamente aquí -->
+                    </select>
+                    <button type="button" onclick="removeBook()">Eliminar</button>
+                </div>
+            </div>
+            <div class="notas-container" id="notas">
+                <h2>Notas</h2>
+                <textarea id="nuevaNota" placeholder="Escribe tu nota aquí..."></textarea>
+                <button id="agregarNotaBtn" class="boton">Agregar Nota</button>
+                <ul id="listaNotas"></ul>
+            </div>
+        </div>
+    </section>
+    <script src="/Recursos/scripts/usuario/scriptu.js"></script>
+    <script src="/Recursos/scripts/usuario/modo.js"></script>
+</body>
+</html>
