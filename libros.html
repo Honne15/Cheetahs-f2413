@@ -15,7 +15,7 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/4.4.168/pdf_viewer.min.css">
 </head>
 
-<body>
+<body class="container">
     <!--Este es el header-->
     <header>
     <div class="box-books">
@@ -45,21 +45,22 @@
     </header>     
     
      <!--Este es el nav, la barra azul--> 
-    <nav class="sidebar">
+    <nav class="sidebar nav-scroll">
         
         <div class="icons">   
             <ul class="main-icon">
                 <li class="menu-icon" id="menuIcon"><i class="fa-solid fa-bars"><span class="tooltips">Menú</span></i>
                     
+                    <div class="menu-icons">
                     <ul class="main-menu">
                         <li class="main-menu__item">
-                            <a href="" class="main-menu__link">
+                            <a href="principal.html" class="main-menu__link">
                                 <i class="fa-solid fa-house-chimney"><span class="tooltip">Inicio</span></i>
                             </a>
                         </li>
 
                         <li class="main-menu__item">
-                            <a href="" class="main-menu__link">
+                            <a href="libros.html" class="main-menu__link">
                                 <i class="fa-solid fa-book"><span class="tooltip">Libros</span></i>
                             </a>
                         </li>
@@ -71,7 +72,7 @@
                         </li>
             
                         <li class="main-menu__item">
-                            <a class="main-menu__link" href="">
+                            <a href="videos.html" class="main-menu__link">
                                 <i class="fa-solid fa-video"><span class="tooltip">Videos</span></i>
                             </a>
                         </li>
@@ -82,9 +83,11 @@
                             </a>
                         </li>
                     </ul>
+                    </div>
                 </li>
             </ul>
         </div>
+        <img class="img-boy" src="/Recursos/img/img_libros/nino.png" alt="Niño sentado con un libro en la mano">
     </nav>
     
     <main>
@@ -95,9 +98,9 @@
          </div>
 
         <div class="category">
-            <h1>Aquí comienza tu aventura</h1>
+            <h1 class="start">Aquí comienza tu aventura</h1>
             <div class="category-container">
-                <h2 class="text-category">Click aquí y encuentra lo que quieres leer</h2>
+                <h2 class="text-category">Encuentra lo que quieres leer:</h2>
                     <ul id="ddlCategorias" class="list-menu">
                         <li class="icon-menu" id="menuCate"><i class="fa-brands fa-readme fa-beat-fade"></i>
                             <ul class="list-cate">
@@ -145,24 +148,21 @@
         </section>
 
         <footer>
-            <div>
-                <img class="img-boy" src="/Recursos/img/img_libros/nino.png" alt="Niño sentado con un libro en la mano">
-            </div>
             <div class="footer-content">
                 <div class="footer-section">
-                    <h2>Número</h2>
+                    <h2 class="ufoo">Número</h2>
                     <div class="line1"></div>
-                    <p>(57) 604 322 06 90</p>
+                    <p class="pfooter">(57) 604 322 06 90</p>
                 </div>
                 <div class="footer-section">
-                    <h2>Email</h2>
+                    <h2 class="ufoo">Email</h2>
                     <div class="line2"></div>
-                    <p>info@secretosparacontar.org</p>
+                    <p class="pfooter">info@secretosparacontar.org</p>
                 </div>
                 <div class="footer-section">
-                    <h2>Ubicación</h2>
+                    <h2 class="ufoo">Ubicación</h2>
                     <div class="line3"></div>
-                    <p>Calle 11A #43B - 41</p>
+                    <p class="pfooter">Calle 11A #43B - 41</p>
                 </div>
             </div>
             <div class="footer-bottom">
@@ -182,7 +182,7 @@
     <script src="/Recursos/scripts/libros/search.js"></script>
     <script src="/Recursos/scripts/libros/mic.js"></script>
     <script src="/Recursos/scripts/libros/main.js"></script>
-
+  
 </body>
 </html>
 
