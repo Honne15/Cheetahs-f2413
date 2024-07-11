@@ -9,31 +9,6 @@ function toggleSidebar() {
   sidebar.classList.toggle('open');
 }
 
-
-
-
-
-
-//buscador
-function searchPage() {
-  const input = document.getElementById('input').value.toLowerCase();
-  const sections = document.querySelectorAll('section, div, main, footer, header');
-  for (let section of sections) {
-      if (section.innerText.toLowerCase().includes(input)) {
-          section.scrollIntoView({ behavior: 'smooth', block: 'start' });
-          break;
-      }
-  }
-}
-
-document.getElementById('input').addEventListener('keypress', function(event) {
-  if (event.key === 'Enter') {
-      searchPage();
-  }
-});
-
-
-
 //funcion modo oscuro 
 const themeSwitch = document.getElementById('theme-switch');
     const body = document.body;
@@ -54,55 +29,6 @@ const themeSwitch = document.getElementById('theme-switch');
         body.setAttribute('data-theme', 'dark');
         themeSwitch.checked = true;
     }
-
-
-//buscador 
-document.getElementById('input').addEventListener('keyup', function (event) {
-  if (event.key === 'Enter') {
-      searchSite();
-  }
-});
-
-function searchSite() {
-  const query = document.getElementById('input').value.toLowerCase();
-  const sections = {
-     
-      
-      'cangrejo': 'cangrejo',
-      'Batalla': 'batalla',
-      'leon': 'leon',
-      'amigo fiel': 'amigo fiel',
-      'matrimonio de gatos':'matrimonio de gatos',
-      'los tres cerditos': 'los tres cerditos',
-      'ciudad de pamplona ':'ciudad de pamplona',
-      'parejas': 'parejas',
-      'herencia del rey': 'herencia del rey',
-      'tierra': 'tierra',
-      'como se formaron los pueblos': 'como se formaron los pueblos',
-      'el hombre que contaba historias': 'el hombre que contaba historias',
-      'tradicion':'tradicion',
-      'los ciegos y el elefante': 'los ciegos y el elefante',
-      'la suerte de ozu':'la suerte de ozu',
-      'cien años': 'cien años',
-      'ducados': 'nudos',
-      'pajaro': 'pajaro',
-      'finca':'finca',
-      'abuelos':'abuelos',
-      'vive como creas': 'vive como creas',
-      'la hoja de hierva': 'la hoja',
-
-
-
-
-      
-  };
-
-  if (sections[query]) {
-      document.getElementById(sections[query]).scrollIntoView({ behavior: 'smooth' });
-  } else {
-      alert('No se encontró la sección correspondiente.');
-  }
-}
 
 
 //microfono 
@@ -133,5 +59,3 @@ function startVoiceRecognition() {
 }
 
 document.querySelector('.micButton').addEventListener('click', startVoiceRecognition);
-
-
