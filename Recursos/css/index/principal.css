@@ -90,10 +90,37 @@ header {
 [data-theme="dark"] {
   /* Colores del tema oscuro */
   --background-color: #121212;
-  --text-color: #fff;
-  --header-background: #1F2937;
+  --text-color: #ffffff;
+  --header-background: #003865;
   /* ... otros colores oscuros ... */
 }
+
+/*Titulos modo claro*/
+h3, h4, h5, h6 {
+  color: #003865;
+}
+
+/* Títulos en modo oscuro */
+body.theme-switch h1,
+body.theme-switch .h2
+ {
+  color: #ffffff; /* Color blanco */
+}
+
+body.theme-switch .recommended {
+  background: #121212;
+}
+
+body.theme-switch .recommended-h2 {
+   background: #121212;
+}
+
+
+body.theme-switch {
+  color: #ffffff;
+  background: #121212;
+}
+
 
 .ui-switch {
   /* switch */
@@ -300,17 +327,29 @@ main {
   box-sizing: border-box;
 }
 
-.iframe__video {
-  margin-top: -10px;
-  width: 100%;
-  height: 500px;
-
+.video-container {
+    position: relative;
+    display: inline-block;
+    width: 100%;
+    top: -10px;
 }
 
 .reference {
-  font-size: 15px;
-  margin-left: 450px;
+    position: absolute;
+    top: 0;
+    right: 0;
+    background-color: rgba(255, 255, 255, 0.8); /* Fondo claro */
+    color: #003865; /* Color de letra blanco */
+    padding: 5px;
+    border-radius: 3px;
+    font-size: 12px;
 }
+
+.iframe__video {
+    width: 100%;
+    height: 500px;
+}
+
 
 .icons__fundacion {
   display: flex;
@@ -319,7 +358,7 @@ main {
   margin-bottom: 20px;
   width: 100%;
   position: relative;
-  top: -20px;
+  top: -35px;
 }
 
 .icon-ERA {
