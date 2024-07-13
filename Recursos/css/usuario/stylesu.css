@@ -23,6 +23,7 @@ body {
 
 .perfil-usuario-header {
     width: 100%;
+    margin-top: -6%;
     display: flex;
     justify-content: center;
     background: linear-gradient(#578DB5, transparent);
@@ -366,7 +367,7 @@ select {
 }
 
 nav.sidebar {
-    position: fixed; 
+    position: relative; 
     top: 0px; 
     left: 0;
     width: 60px;
@@ -378,6 +379,7 @@ nav.sidebar {
     border-top-right-radius: 20px;
     flex-direction: column;
     justify-content: space-between;
+    z-index: 1000;
 }
 
 .sidebar ul {
@@ -474,8 +476,8 @@ a {
    
   .ui-switch {
     align-items: center;
-    margin-left: 450px;
-    margin-top: 3%; /* Puedes ajustar este valor para mover el botón hacia abajo */
+    margin-top: -2%;
+    margin-left: 7%;
     /* switch */
     --switch-bg: #D7D2CB;
     --switch-width: 48px;
@@ -487,7 +489,6 @@ a {
     position: fixed;
     display: inline-block;
     vertical-align: middle;
-    top: 300px; /* Añadir esta línea para bajar el botón */
 }
 
    
@@ -570,3 +571,7 @@ a {
     width: 0;
     height: 0;         
   }
+
+   img{
+    width: 100px;
+   }

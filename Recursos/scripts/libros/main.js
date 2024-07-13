@@ -44,7 +44,7 @@ const conCategoria = [
       ['24', '/Recursos/img/img_libros/portada-los-primeros-anos.webp', 'Los primeros años', 'Familia', '/Recursos/pdfs/LOS_PRIMEROS_ANOS.pdf', ''],
       ['25', '/Recursos/img/img_libros/portada-los-secretos-de-las-plantas.webp', 'Los secretos de las plantas', 'Plantas', '/Recursos/pdfs/LOS_SECRETOS_DE_LAS_PLANTAS.pdf', ''],
       ['26', '/Recursos/img/img_libros/portada-la-finca-viva.webp', 'La finca viva', 'Plantas', '/Recursos/pdfs/LA_FINCA_VIVA.pdf', 'https://widget.spreaker.com/player?show_id=4796884&theme=dark&playlist=show&playlist-continuous=true&chapters-image=true'],
-      ['27', '/Recursos/img/img_libros/portada-casa-y-campo.webp', 'La casa y el campo', 'Plantas', '/Recursos/pdfs/LA_CASA_Y_EL_CAMPO.pdf', 'https://widget.spreaker.com/player?show_id=4421133&theme=dark&playlist=show&playlist-continuous=true&chapters-image=true']
+      ['27', '/Recursos/img/img_libros/portada-casa-y-campo.webp', 'La casa y el campo', 'Plantas', '/Recursos/pdfs/LA_CASA_Y_EL_CAMPO.pdf','https://widget.spreaker.com/player?show_id=4421133&theme=dark&playlist=show&playlist-continuous=true&chapters-image=true']
   ];
 
   let juego = [];
