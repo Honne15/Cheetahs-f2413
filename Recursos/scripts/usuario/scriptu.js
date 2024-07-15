@@ -128,139 +128,32 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
  
+
+
+//Agregar libros guardados
 document.addEventListener('DOMContentLoaded', function() {
-    // Cargar libros favoritos almacenados localmente al cargar la página
-    favoriteBooks = JSON.parse(localStorage.getItem('favoriteBooks')) || [];
-    displayBooks();
+    const libroGuardado = JSON.parse(localStorage.getItem('libroGuardado'));
+
+    if (libroGuardado) {
+        const libroContainer = document.getElementById('libroGuardadoContainer');
+        const libroImagen = document.createElement('img');
+        libroImagen.src = libroGuardado[1];
+        libroContainer.appendChild(libroImagen);
+
+        const libroTitulo = document.createElement('h2');
+        libroTitulo.textContent = libroGuardado[2];
+        libroContainer.appendChild(libroTitulo);
+    }
 });
+        const eliminarLibro = (index) => {
+            const notas = JSON.parse(localStorage.getItem('')) || [];
+            notas.splice(index, 1);
+            guardarNotas(notas);
+            cargarNotas();
+        };
 
-let favoriteBooks = [];
 
-// Mostrar la ventana emergente para agregar un libro
-function showAddBookModal() {
-    document.getElementById('addBookModal').style.display = 'block';
-}
-
-// Cerrar la ventana emergente
-function closeAddBookModal() {
-    document.getElementById('addBookModal').style.display = 'none';
-}
-
-// Función para agregar un libro a la lista de favoritos
-function addBook() {
-    const titleInput = document.getElementById('newBookTitle');
-    const title = titleInput.value.trim();
-
-    if (title !== '') {
-        // Agregar el título a la lista de favoritos
-        favoriteBooks.push(title);
-        
-        // Guardar la lista actualizada en el almacenamiento local
-        localStorage.setItem('favoriteBooks', JSON.stringify(favoriteBooks));
-        
-        // Actualizar la lista en el HTML
-        displayBooks();
-        
-        // Limpiar el campo de entrada y cerrar la ventana emergente
-        titleInput.value = '';
-        closeAddBookModal();
-    }
-}
-
-// Función para mostrar los libros favoritos en la lista
-function displayBooks() {
-    const bookList = document.getElementById('book-list');
-    bookList.innerHTML = ''; // Limpiar la lista antes de volver a mostrar
-    
-    favoriteBooks.forEach(book => {
-        const li = document.createElement('li');
-        li.textContent = book;
-        bookList.appendChild(li);
-    });
-}
-
-// Cerrar la ventana emergente si se hace clic fuera de ella
-window.onclick = function(event) {
-    const modal = document.getElementById('addBookModal');
-    if (event.target == modal) {
-        modal.style.display = 'none';
-    }
-}
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    loadFavorites();
-});
-
-function showAddBookModal() {
-    document.getElementById('addBookModal').style.display = 'block';
-}
-
-function closeAddBookModal() {
-    document.getElementById('addBookModal').style.display = 'none';
-}
-
-function addBook() {
-    const bookTitle = document.getElementById('newBookTitle').value;
-    if (bookTitle) {
-        let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-        favorites.push(bookTitle);
-        localStorage.setItem('favorites', JSON.stringify(favorites));
-        document.getElementById('newBookTitle').value = '';
-        closeAddBookModal();
-        loadFavorites();
-    }
-}
-
-function loadFavorites() {
-    const bookList = document.getElementById('book-list');
-    bookList.innerHTML = '';
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    favorites.forEach((bookTitle, index) => {
-        let li = document.createElement('li');
-        li.textContent = bookTitle;
-        bookList.appendChild(li);
-    });
-}
-
-function showRemoveBookModal() {
-    const bookSelect = document.getElementById('bookSelect');
-    bookSelect.innerHTML = '';
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    favorites.forEach((bookTitle, index) => {
-        let option = document.createElement('option');
-        option.value = index;
-        option.textContent = bookTitle;
-        bookSelect.appendChild(option);
-    });
-    document.getElementById('removeBookModal').style.display = 'block';
-}
-
-function closeRemoveBookModal() {
-    document.getElementById('removeBookModal').style.display = 'none';
-}
-
-function removeBook() {
-    const bookSelect = document.getElementById('bookSelect');
-    let selectedIndex = bookSelect.value;
-    let favorites = JSON.parse(localStorage.getItem('favorites')) || [];
-    favorites.splice(selectedIndex, 1);
-    localStorage.setItem('favorites', JSON.stringify(favorites));
-    closeRemoveBookModal();
-    loadFavorites();
-}
-
-// Close modals when clicking outside
-window.onclick = function(event) {
-    const addBookModal = document.getElementById('addBookModal');
-    const removeBookModal = document.getElementById('removeBookModal');
-    if (event.target == addBookModal) {
-        addBookModal.style.display = 'none';
-    }
-    if (event.target == removeBookModal) {
-        removeBookModal.style.display = 'none';
-    }
-}
-
+//Agregar notas
 document.addEventListener('DOMContentLoaded', (event) => {
     const nuevaNota = document.getElementById('nuevaNota');
     const agregarNotaBtn = document.getElementById('agregarNotaBtn');
