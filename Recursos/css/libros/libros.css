@@ -98,9 +98,9 @@ body {
 /*Desde aqui es el switch*/
 [data-theme="dark"] {
 /* Colores del tema oscuro */
---background-color: #000000;
+--background-color: #171515;
 --color-title: #ffffff;
---header-background: #000000;
+--header-background: #171515;
 /* ... otros colores oscuros ... */
 }
 
@@ -695,14 +695,9 @@ margin-top: 0.5%;
     content: url(/Recursos/img/img_libros/bannerli.jpg);
   }
 
-  /*h1{
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    text-align: center;
-    white-space: nowrap;
-    font-size: 35px;
-  }*/
+  h1{
+    display: none;
+  }
 
   .user-icon {
       margin-left: 15px;
@@ -815,6 +810,12 @@ margin-top: 0.5%;
     
   .book-title{
     font-size: 16px;
+  }
+
+  .download-link,
+  .read-link,
+  .listen-link{
+    font-size: 15px;
   }
 
   .footer-content{
