@@ -350,6 +350,11 @@ main {
     height: 500px;
 }
 
+.reference {
+  font-size: 15px;
+  margin-left: 450px;
+}
+
 .icons__fundacion {
   display: flex;
   justify-content: space-around;

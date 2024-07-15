@@ -5,3 +5,5 @@ document.getElementById('theme-switch').addEventListener('change', function(even
       document.documentElement.setAttribute('data-theme', 'light');
     }
   });
+
+  

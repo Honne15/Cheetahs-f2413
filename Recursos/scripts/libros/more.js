@@ -19,3 +19,15 @@ const themeSwitch = document.getElementById('theme-switch');
             themeSwitch.checked = true;
         }
 
+
+// Header responsive
+window.addEventListener('scroll', function() {
+    var scrollPosition = window.scrollY;
+  
+    if (scrollPosition > 20) { // Ajusta este valor según sea necesario
+      document.body.classList.add('scroll-down');
+    } else {
+      document.body.classList.remove('scroll-down');
+    }
+  });
+
