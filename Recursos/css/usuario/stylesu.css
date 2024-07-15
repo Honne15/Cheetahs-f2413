@@ -23,7 +23,7 @@ body {
     padding: 10px;
     background-color: #5F8DB5;
     margin-bottom: 6%;
-    width: 101%;
+    width: 100%;
   }
   
   .header-content {
@@ -239,7 +239,7 @@ body {
 }
 
 .perfil-usuario-header {
-    width: 105%;
+    width: 100%;
     margin-top: -7%;
     display: flex;
     justify-content: center;
@@ -696,6 +696,7 @@ a {
         justify-content: space-between;
         align-items: center;
         margin-bottom: 6%;
+        width: 98.4%;
     }
   
     .header-content {
@@ -725,6 +726,7 @@ a {
 
     .main-menu{
         background-color: #D7D2CB;
+        transform: translateX(-6%);
     }
 
     .main-menu li a{
