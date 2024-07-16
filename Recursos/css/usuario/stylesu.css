@@ -254,7 +254,7 @@ body {
     border-radius: 0 0 20px 20px;
     background-size: cover;
     background-position: center;
-    background-image: url(/Recursos/img/img_log/fondo.jpeg);
+    background-image: url(/Recursos/img/img_log/fondo.jpg);
 }
 
 .boton-portada {
@@ -290,7 +290,7 @@ body {
     height: 100%;
     border-radius: 50%;
     object-fit: cover;
-    background-image: url(/Recursos/img/img_log/usuario.jpeg);
+    background-image: url(/Recursos/img/img_log/iconodeusuario.jpg);
 }
 
 .boton-avatar {
