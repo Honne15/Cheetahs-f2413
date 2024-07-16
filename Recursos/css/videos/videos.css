@@ -16,6 +16,88 @@ body {
 }
 
 
+/* Media query para pantallas más pequeñas */
+@media (max-width: 768px) {
+  body {
+    display: block;
+    padding-left: 20px;
+  }
+
+  header {
+    flex-direction: column;
+    height: auto;
+    padding: 10px 5%;
+    box-shadow: none;
+  }
+
+  .image-logo, .user-icon, .search {
+    margin-left: 0;
+    margin-right: 0;
+  }
+
+  .box-books {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .image-logo {
+    height: 50px;
+    width: auto;
+    margin-bottom: 10px;
+  }
+
+  .search {
+    width: 100%;
+    padding: 5px 20px;
+    margin: 10px 0;
+  }
+
+  .user-icon {
+    margin: 10px 0;
+  }
+
+  h1 {
+    font-size: 200%;
+    margin-left: 0;
+    margin-top: 10px;
+    margin-bottom: 10px;
+  }
+
+  h2 {
+    font-size: 150%;
+    margin-top: 10px;
+  }
+
+  .video-grid {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    padding: 10px;
+  }
+
+  .video-container {
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  .sidebar {
+    display: none;
+  }
+
+  footer {
+    padding: 20px 5px;
+    height: auto;
+  }
+
+  .content-footer {
+    flex-direction: column;
+    width: 90%;
+  }
+
+  .footer--img {
+    margin: 20px auto;
+  }
+}
+
+
 :root {
   --color-title: #7A7A7A;
   --color-subtitle: #003865;
@@ -59,20 +141,21 @@ p {
 }
 
 
-/*Desde aqui es el header*/
-header{
-  position:absolute;
+
+header {
+  position: absolute;
   top: 0;
   left: 0;
-  width: 1439px;
- 
+  width: 100%;
+  height: 100px;
+  margin: 0;
+  display: flex;
   justify-content: space-between;
-  min-height: 70px;
-  background-color: rgb(255, 255, 255);
-  padding: 0% 5%;
-  margin-left: 80px;
+  align-items: center;
+  background-color: #5F8DB5;
+  padding: 0 5%;
   z-index: 1000;
-  border-bottom: 2px solid #00000000;
+  border-bottom: 2px solid transparent;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.413);
 }
 
@@ -170,7 +253,7 @@ color: #003865; /* Color azul */
 
 /* Modo oscuro */
 body.dark-mode {
-background-color: #121212;
+background-color: #171515;
 color: #ffffff;
 }
 
@@ -203,16 +286,17 @@ left: calc(100% - var(--circle-diameter));
 background-image: url("data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIGhlaWdodD0iMjAiIHdpZHRoPSIyMCIgdmlld0JveD0iMCAwIDIwIDIwIj4KICAgIDxwYXRoIGZpbGw9IiNmZmYiCiAgICAgICAgZD0iTTQuMiAyLjVsLS43IDEuOC0xLjguNyAxLjguNy43IDEuOC42LTEuOEw2LjcgNWwtMS45LS43LS42LTEuOHptMTUgOC4zYTYuNyA2LjcgMCAxMS02LjYtNi42IDUuOCA1LjggMCAwMDYuNiA2LjZ6IiAvPgo8L3N2Zz4=");
 }
 
-.slider {
-position: absolute;
-cursor: pointer;
-top: 0;
-left: 0;
-right: 0;
-bottom: 0;
-background-color: var(--color-title);
-transition: 0.4s;
-border-radius: 34px;
+
+span, .slider {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  width: var(--switch-width);
+  height: var(--switch-height);
+  background-color: var(--circle-bg);
+  border-radius: 999px;
+  position: relative;
+  cursor: pointer;
 }
 
 .slider .circle {
@@ -290,27 +374,7 @@ i:hover .usertip{       /*Aqui esta el hover del nombre del icono de usuario*/
   opacity: 0;
   transition: opacity 0.3s;
 }
-/*Desde aqui es el nav, la barra azul*/
-nav.sidebar{  
-  position: fixed; 
-  top: 0px; 
-  left: 0;
-  width: 80px;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  background-color: var(--color-background1);
-  border-right: rgba(255, 0, 0, 0);
-  border-width: 15%;
-  border-left: transparent;
-  border-top: transparent;
-  border-bottom: transparent;
-  border-style: solid;
-  z-index: 1000;
-  flex-direction: column;
-  justify-content: space-between;
-}
+
 
 .sidebar ul{
   margin: 0;
@@ -406,80 +470,6 @@ a{
   height: 90%;
   
 }
-
-@media (max-width: 1248px) {
-  header {
-    position:absolute;
-    top: 0;
-    left: 0;
-    width: 300%;
-    height: 140px; /* Aumentamos la altura del header */
-    z-index: 100; /* Ajustamos el z-index según sea necesario */
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0.445); /* Mantenemos la sombra */
-  }
-
-  .search {
-    height: 40%;
-    
-  }
-  .image-logo{   /*Imagen del logo*/
-    height: 100px;
-    width: 130px;
-    margin-left: 1px;
-  }
-  
-  .image-perfil {
-    height: 30px;
-    width: 30px;
-  }
-
-  .menu-icon {
-    padding: 50% 50%;
-    width: 50%;
-    height: 50%;
-  }
-
-  .box-books {
-    padding-left: -1000;
-  }
-
-  .video-grid {
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr)); /* Ajustamos el ancho mínimo según sea necesario */
-    gap: 15px; /* Ajustamos el espacio entre los videos */
-    padding: 10px; /* Ajustamos el padding interno */
-  }
-
-  .video-container {
-    margin-left: auto; /* Ajustamos el margen izquierdo para centrar */
-    margin-right: auto; /* Ajustamos el margen derecho para centrar */
-  }
-
-  .box-icon {
-    margin-left: 10px; /* Ajustamos el valor según lo que necesites para mover el contenido más a la izquierda */
-  }
-  
-  footer {
-    padding: 60px 0px 470px 0px;
-  }
-
-  .content-footer {
-    flex-direction: column;
-    align-items: center;
-  }
-
-  .content-foo {
-    margin-bottom: 20px;
-  }
-
-  .footer--img {
-    margin-top: -80px;
-  }
-
-  .title-finish {
-    font-size: 20px;
-  }
-}
-
 .videos {
   padding: 20px;
   display: flex;
@@ -503,12 +493,6 @@ a{
 }
 
 
-/* Ajustes para la sección de contenido (donde está la cuadrícula de videos) */
-#content {
-grid-area: content; /* Asegúrate de que la sección de contenido tenga el mismo nombre de área */
-padding-left: 5%; /* Ajusta el padding izquierdo si es necesario */
-}
- 
 
 
 .video-container {
@@ -578,15 +562,6 @@ iframe {
 
 
 
-.imagen {
-justify-self: 100%; /* Alinea a la derecha */
-grid-column: 1; /* Ocupa la primera columna */
-grid-row: 1; /* Ocupa la primera fila */
-width: 18%; /* Ajusta el ancho al 70% del contenedor */
-height: auto; /* Ajusta la altura automáticamente */
-}
-
-
 
 .image-logoh {
 height: 100px;
@@ -608,11 +583,13 @@ margin-left: -20%;
 
 
 
+/* Estilos para el footer */
 footer {
   background: var(--color-background1);
-  padding: 50px 6px 220px 100px;
+  padding: 50px 6px 220px 0; /* Ajusta el padding derecho */
   margin: 0;
   overflow: hidden;
+  height: 90px;
 }
 
 .content-footer {
