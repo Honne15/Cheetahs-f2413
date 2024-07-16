@@ -7,9 +7,11 @@ function setupGuardarButton(libro) {
     guardarButton.innerHTML = `<i class="fa-solid fa-heart"></i>`;
 
     guardarButton.addEventListener('click', function() {
-        localStorage.setItem('libroGuardado', JSON.stringify(libro));
+        let librosGuardados = JSON.parse(localStorage.getItem('librosGuardados')) || [];
+        librosGuardados.push(libro);
+        localStorage.setItem('librosGuardados', JSON.stringify(librosGuardados));
         alert(`Libro "${libro[2]}" guardado exitosamente.`);
-        window.location.href = 'usuario.html'; // Redirigir a la página de usuario después de guardar
+        window.location.href = 'usuario.html';
     });
 
     // Añadir el botón al contenedor
