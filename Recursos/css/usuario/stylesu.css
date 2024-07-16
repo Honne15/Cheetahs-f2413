@@ -317,6 +317,7 @@ body {
 }
 
 .titulo {
+    color: #003865;
     font-weight: 700;
     margin-bottom: 0.5rem;
 }
@@ -433,7 +434,12 @@ body {
     margin-top: 10%;
     text-align: center;
     font-size: 20px;
-    
+}
+
+.icon-youtube, 
+.icon-instagram,
+.icon-facebook{
+    font-size: 37px;
 }
 
 .section-right {
@@ -454,17 +460,48 @@ body {
     margin: auto;
 }
 
-.favoritos, .notas-container {
-    margin-bottom: 20px;
+.text-save{
+    color: #003865;
+    text-align: center;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 700;
 }
 
-input[type="text"] {
-    padding-block: 1px;
-    padding-inline: 2px;
-    font-family: "Literata", serif;
-    border-radius: 5px;
-    border: none;
+.libro-guardado-container{
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(140px, 1fr)); 
+    grid-gap: 5px; 
 }
+
+.book-item{
+    height: 90px;
+    background-color: rgb(247, 245, 232);
+    padding: 15px; 
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+    border-radius: 20px;
+    border: 2px var(--color-background1) solid;
+    margin-bottom: 15px; 
+}
+
+.book-image{
+    display: none;
+}
+
+.book-title{
+    color: #000000;
+    font-size: 15px;
+}
+
+.eliminar-button{
+    font-size: 14px;
+    font-family: "Be Vietnam Pro", sans-serif;
+    font-weight: 500;
+}
+
+.eliminar-button:hover{
+    background-color:  #ff714b;
+}
+
 
 button{
     appearance: auto;
@@ -501,6 +538,7 @@ select {
 }
 
 .favoritos .titulo, .notas-container h2 {
+    color: #003865;
     text-align: center;
     font-family: "Be Vietnam Pro", sans-serif;
     font-weight: 700;
@@ -519,13 +557,6 @@ select {
     display: flex;
     justify-content: space-between;
     font-family: "Literata", serif;
-}
-
-.favoritos .boton-favorito {
-    display: block;
-    margin: 10px auto;
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-weight: 600;
 }
 
 .notas-container textarea {
@@ -583,28 +614,6 @@ select {
     color: #000;
     text-decoration: none;
     cursor: pointer;
-}
-
-nav.sidebar {
-    position: relative; 
-    top: 0px; 
-    left: 0;
-    width: 60px;
-    height: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    background-color: var(--color-background1);
-    border-top-right-radius: 20px;
-    flex-direction: column;
-    justify-content: space-between;
-    z-index: 1000;
-}
-
-.sidebar ul {
-    margin: 0;
-    padding: 0;
-    list-style: none;
 }
 
 ul {
@@ -731,5 +740,33 @@ a {
 
     .main-menu li a{
         background-color: #fff;
+    }
+
+}
+
+@media (min-width: 566px) {
+    .book-image{
+        display: inline;
+        width: 120px;
+        height: 160px;
+        object-fit: cover;
+        margin-left: 10%;
+        border: 2px #003865 solid;
+        border-radius: 10px;
+    }
+    
+    .libro-guardado-container{
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); 
+        grid-gap: 10px; 
+    }
+
+    .book-item{
+        height: 250px;
+    }
+
+    .book-title{
+        color: #000000;
+        font-size: 15px;
     }
 }

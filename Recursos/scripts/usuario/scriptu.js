@@ -131,26 +131,53 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 //Agregar libros guardados
-document.addEventListener('DOMContentLoaded', function() {
-    const libroGuardado = JSON.parse(localStorage.getItem('libroGuardado'));
+function saveBook(book) {
+    let librosGuardados = JSON.parse(localStorage.getItem('librosGuardados')) || [];
+    librosGuardados.push(book);
+    localStorage.setItem('librosGuardados', JSON.stringify(librosGuardados));
+}
 
-    if (libroGuardado) {
+document.addEventListener('DOMContentLoaded', function() {
+    const librosGuardados = JSON.parse(localStorage.getItem('librosGuardados'));
+
+    if (librosGuardados.length > 0) {
         const libroContainer = document.getElementById('libroGuardadoContainer');
+        libroContainer.innerHTML = '';
+
+    librosGuardados.forEach((libro,index) => {
+        const libroDiv = document.createElement('div');
+        libroDiv.classList.add('book-item');
+
         const libroImagen = document.createElement('img');
-        libroImagen.src = libroGuardado[1];
-        libroContainer.appendChild(libroImagen);
+        libroImagen.src = libro[1];
+        libroImagen.classList.add('book-image');
+        libroDiv.appendChild(libroImagen);
 
         const libroTitulo = document.createElement('h2');
-        libroTitulo.textContent = libroGuardado[2];
-        libroContainer.appendChild(libroTitulo);
+        libroTitulo.textContent = libro[2];
+        libroTitulo.classList.add('book-title');
+        libroDiv.appendChild(libroTitulo);
+
+        const eliminarButton = document.createElement('button');
+        eliminarButton.textContent = 'Eliminar';
+        eliminarButton.classList.add('eliminar-button');
+        eliminarButton.addEventListener('click', function() {
+            eliminarLibro(index);
+        });
+        libroDiv.appendChild(eliminarButton);
+
+        libroContainer.appendChild(libroDiv);
+    });
+
     }
 });
-        const eliminarLibro = (index) => {
-            const notas = JSON.parse(localStorage.getItem('')) || [];
-            notas.splice(index, 1);
-            guardarNotas(notas);
-            cargarNotas();
-        };
+
+function eliminarLibro(index) {
+    let librosGuardados = JSON.parse(localStorage.getItem('librosGuardados')) || [];
+    librosGuardados.splice(index, 1);
+    localStorage.setItem('librosGuardados', JSON.stringify(librosGuardados));
+    location.reload(); // Recargar la página para actualizar la lista de libros guardados
+}
 
 
 //Agregar notas
