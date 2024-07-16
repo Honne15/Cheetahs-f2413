@@ -15,9 +15,10 @@ document.addEventListener('DOMContentLoaded', function() {
             setupGuardarButton(libro);
             if (libro.length > 5) {
                 const audioUrl = libro[5] || '';
-                const isPlaylist = audioUrl.includes('spreaker.com/player');
+                const isSpreaker = audioUrl.includes('spreaker.com/player');
+                const isSpotify = audioUrl.includes('spotify.com');
                 if (audioUrl) {
-                    setupAudioPlayer(audioUrl, isPlaylist);
+                    setupAudioPlayer(audioUrl, isSpreaker, isSpotify);
                 } else {
                     console.log('Este libro no tiene audio asociado.');
                 }
@@ -36,7 +37,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
             const pdfViewer = document.getElementById('pdf-viewer');
-            pdfViewer.classList.add('pdf-viewer-centered')
+            pdfViewer.classList.add('pdf-viewer')
             
             pdfViewer.innerHTML = '';
 
@@ -95,12 +96,12 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Función para el reproductor de audio
-    function setupAudioPlayer(audioUrl, isPlaylist = false) {
+    function setupAudioPlayer(audioUrl, isSpreaker, isSpotify) {
         const audioPlayerContainer = document.getElementById('audio-player');
         audioPlayerContainer.classList.add('audio-player-centered');
         audioPlayerContainer.innerHTML = '';
 
-        if (isPlaylist) {
+        if (isSpreaker || isSpotify) {
             // Crear el código HTML para mostrar la lista de reproducción
             const iframe = document.createElement('iframe');
             iframe.classList.add('audio-player-iframe');
@@ -110,6 +111,7 @@ document.addEventListener('DOMContentLoaded', function() {
             iframe.allow = 'encrypted-media';
 
             audioPlayerContainer.appendChild(iframe);
+            
         } else {
             // Crear el reproductor de audio individual
             const audio = document.createElement('audio');

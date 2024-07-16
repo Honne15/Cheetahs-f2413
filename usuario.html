@@ -10,49 +10,63 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
-    <nav class="sidebar">
-        <div class="icons">   
-            <ul class="main-icon">
-                <li class="menu-icon" id="menuIcon">
-                    <i class="fas fa-bars"></i><span class="tooltips">Menú</span>
-                    <ul class="main-menu">
-                        <li class="main-menu__item">
-                            <a href="principal.html" class="main-menu__link">
-                                <i class="fas fa-house-chimney"></i><span class="tooltip">Inicio</span>
-                            </a>
-                        </li>
-                        <li class="main-menu__item">
-                            <a href="libros.html" class="main-menu__link">
-                                <i class="fas fa-book"></i><span class="tooltip">Libros</span>
-                            </a>
-                        </li>
-                        <li class="main-menu__item">
-                            <a href="educa.html" class="main-menu__link" target="_blank" rel="noopener noreferrer">
-                                <i class="fas fa-chalkboard-user"></i><span class="tooltip">Educa</span>
-                            </a>
-                        </li>
-                        <li class="main-menu__item">
-                            <a href="videos.html" class="main-menu__link">
-                                <i class="fas fa-video"></i><span class="tooltip">Videos</span>
-                            </a>
-                        </li>
-                        <li class="main-menu__item">
-                            <a href="login.html" class="main-menu__link">
-                                <i class="fas fa-arrow-right-from-bracket"></i><span class="tooltip">Salir</span>
-                            </a>
-                        </li>
-                    </ul>
-                </li>
-            </ul>
+    <header class="header">
+        <div class="header-content">
+            <img class="image-logoh" src="/Recursos/img/Logo_horinzontal.png" alt="Logo de secretos para contar"> 
+            <h1 class="title-header">Camino de relatos</h1>
         </div>
-    </nav>
-    <!--Este es el switch-->
-    <label class="ui-switch">  
-        <input type="checkbox" id="theme-switch">
-        <div class="slider">
-            <div class="circle"></div>
+        <div class="header-icons">
+            <div class="icons">   
+                <ul class="main-icon">
+                    <li class="menu-icon" id="menuIcon"><i class="fa-solid fa-bars"><span class="tooltips">Menú</span></i>
+                    
+                        <div class="menu-icons">
+                            <ul class="main-menu">
+                                <li class="main-menu__item">
+                                    <a href="principal.html" class="main-menu__link">
+                                        <i class="fa-solid fa-house-chimney"><span class="tooltip">Inicio</span></i>
+                                    </a>
+                                </li>
+
+                                <li class="main-menu__item">
+                                    <a href="libros.html" class="main-menu__link">
+                                        <i class="fa-solid fa-book"><span class="tooltip">Libros</span></i>
+                                    </a>
+                                </li>
+                    
+                                <li class="main-menu__item">
+                                    <a href="educa.html" class="main-menu__link" target="_blank" rel="noopener noreferrer">
+                                        <i class="fa-solid fa-chalkboard-user"><span class="tooltip">Educa</span></i>
+                                    </a>
+                                </li>
+            
+                                <li class="main-menu__item">
+                                    <a href="videos.html" class="main-menu__link">
+                                        <i class="fa-solid fa-video"><span class="tooltip">Videos</span></i>
+                                    </a>
+                                </li>
+            
+                                <li class="main-menu__item">
+                                    <a href="login.html" class="main-menu__link">
+                                        <i class="fa-solid fa-arrow-right-from-bracket"><span class="tooltip">Salir</span></i>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            <!-- Este es el switch -->
+            <label class="ui-switch">  
+                <input type="checkbox" id="theme-switch">
+                <div class="slider">
+                    <div class="circle"></div>
+                </div>
+            </label>  
+        
         </div>
-    </label>
+    </header>
+
     <section class="seccion-perfil-usuario" id="perfil">
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada" id="backgroundContainer">
