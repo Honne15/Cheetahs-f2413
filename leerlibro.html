@@ -13,38 +13,44 @@
     <title>Lectura</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf_viewer.min.css"/>
 </head>
-<body>
-    <div class="save">
-        <button class="home">
-            <a href="libros.html"><i class="fa-solid fa-house-chimney icon"></i>Inicio</a>
-        </button>
-    </div>
+<body class="grid-container">
+    <header class="header">
+        <div class="icons-header">
+            <div class="save">
+                <a href="libros.html"><i class="fa-solid fa-book"></i>Más libros</a>
+            </div>
 
 
-    <div id="guardarButtonContainer">
-        <!-- Aquí se generará dinámicamente el botón de guardar -->
-    </div>
+            <div id="guardarButtonContainer">
+                <!-- Aquí se generará dinámicamente el botón de guardar -->
+            </div>
 
-    <div>
-        <label class="ui-switch">  
-            <input type="checkbox" id="theme-switch">
-                <span class="slider">
-                    <div class="circle"></div>
-                </span>
-        </label>
-    </div>
+            <div>
+                <label class="ui-switch">  
+                    <input type="checkbox" id="theme-switch">
+                        <span class="slider">
+                            <span class="circle"></span>
+                        </span>
+                </label>
+            </div>
+        </div>
+    </header>
 
-    <div class="main-container">
-        <div id="pdf-viewer" class="pdf-viewer"></div>
-    </div>
+    <main class="main">
+        <div class="main">
+            <div class="pdf-content">
+                <div id="pdf-viewer" class="pdf-viewer"></div>
+            </div>
 
-    <div id="progress-bar-container" class="progress-bar-container">
-        <div id="progress-bar" class="progress-bar"></div>
-    </div>
+            <div id="progress-bar-container" class="progress-bar-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
 
-    <div class="audio-container">
-        <div id="audio-player" class="audio-player"></div>
-    </div>
+            <div class="audio-container">
+                <div id="audio-player"></div>
+            </div>
+        </div>
+    </main>
 
     <script src="https://widget.spreaker.com/player-base-e6919b45d4de84664482.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js"></script>
