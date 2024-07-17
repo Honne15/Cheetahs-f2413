@@ -84,7 +84,6 @@ body {
 }
 
 .pdf-viewer canvas {
-  scale: 1;
   width: 100%;
   max-width: 100%; /* Asegura que el visor ocupe todo el ancho disponible */
   height: 80vh; /* Altura inicial, ajusta según tu diseño */
@@ -164,7 +163,7 @@ body {
   display: none;
 }
 
-@media (min-width: 680px){
+@media (min-width: 743px){
 
   body{
     background-image: var(--background-image-light);
@@ -262,7 +261,7 @@ body {
 }
 
 
-@media (min-width: 680px) and (max-width: 1030px) {
+@media (min-width: 743px) and (max-width: 1030px) {
   .grid-container {
     grid-template-areas: 
         "header header"  
@@ -278,7 +277,6 @@ body {
 
 
   .pdf-viewer canvas {
-    scale: 1;
     width: 60%;
     max-width: 100%;
     height: 90vh;
@@ -291,6 +289,7 @@ body {
     position: fixed;
     top: 0;
     left: 0;
+    margin-left: -2%;
     width: 100%;
     z-index: 1000;
     padding: 10px;
@@ -321,7 +320,6 @@ body {
   }
 
   .pdf-viewer canvas {
-    scale: 1;
     width: 60%;
     max-width: 100%; /* Asegura que el visor ocupe todo el ancho disponible */
     height: 110vh; /* Altura inicial, ajusta según tu diseño */
