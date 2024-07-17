@@ -45,7 +45,14 @@ document.addEventListener('DOMContentLoaded', function() {
             const totalPages = pdfDoc_.numPages;
 
             function renderPage(page) {
-                const scale = 1.3;
+                const viewportWidth = window.innerWidth;
+            
+                if (viewportWidth < 768) {
+                    scale = 0.45; // Escala para dispositivos móviles
+                } else {
+                    scale = 1.5; // Escala para dispositivos de escritorio
+                }
+
                 const viewport = page.getViewport({ scale: scale });
 
                 const canvas = document.createElement('canvas');
@@ -79,7 +86,8 @@ document.addEventListener('DOMContentLoaded', function() {
     // Función para configurar el progreso al hacer scroll
     function setupScrollProgress(pdfViewer, pdfDoc, totalPages) {
         const progressBarContainer = document.getElementById('progress-bar-container');
-        const progressBar = document.getElementById('progress-bar');
+        const progressBar = document.getElementById('progressBar');
+        const pdfContainer = document.querySelector('.pdf-container');
 
         window.addEventListener('scroll', function() {
             const scrollTop = window.scrollY;
@@ -95,19 +103,23 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     }
 
+    document.addEventListener('DOMContentLoaded', setupScrollProgress);
+
     // Función para el reproductor de audio
     function setupAudioPlayer(audioUrl, isSpreaker, isSpotify) {
         const audioPlayerContainer = document.getElementById('audio-player');
-        audioPlayerContainer.classList.add('audio-player-centered');
         audioPlayerContainer.innerHTML = '';
 
         if (isSpreaker || isSpotify) {
-            // Crear el código HTML para mostrar la lista de reproducción
+            
+            const playerWrapper = document.createElement('div');
+            playerWrapper.classList.add('player-wrapper');
+
             const iframe = document.createElement('iframe');
             iframe.classList.add('audio-player-iframe');
             iframe.src = audioUrl;
             iframe.width = '100%';
-            iframe.height = '100%';
+            iframe.height = '40%';
             iframe.allow = 'encrypted-media';
 
             audioPlayerContainer.appendChild(iframe);
@@ -117,6 +129,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const audio = document.createElement('audio');
             audio.src = audioUrl;
             audio.controls = true;
+
 
             audioPlayerContainer.appendChild(audio);
         }
