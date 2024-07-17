@@ -57,12 +57,12 @@
                 </ul>
             </div>
             <!-- Este es el switch -->
-            <label class="ui-switch">  
+            <label class="ui-switch">
                 <input type="checkbox" id="theme-switch">
-                <div class="slider">
-                    <div class="circle"></div>
-                </div>
-            </label>  
+                <span class="slider">
+                    <span class="circle"></span>
+                </span>
+            </label>
         
         </div>
     </header>
@@ -71,7 +71,7 @@
         <div class="perfil-usuario-header">
             <div class="perfil-usuario-portada" id="backgroundContainer">
                 <div class="perfil-usuario-avatar">
-                    <img id="avatarImage" src="" alt="Avatar">
+                    <img id="avatarImage" src="#" alt="Avatar">
                     <button type="button" class="boton-avatar" id="changeAvatarButton">
                         <i class="far fa-image"></i>
                     </button>
@@ -101,14 +101,30 @@
                     <li><i class="icono fas fa-map-marker-alt"></i> Ubicación: <span id="spanUbicacion"></span></li>
                     <li><i class="icono fas fa-building"></i> Profesión: <span id="spanProfesion"></span></li>
                 </ul>
-                <button class="editar-datos">Editar datos</button>
+                <button class="editar-datos">Editar datos</button>                                  
+            </div>
+            </div>
+            <div id="editModal" class="modal">
+                <div class="modal-content">
+                    <span class="close">&times;</span>
+                    <h2>Editar Información</h2>
+                    <form id="editForm">
+                        <label for="editOption">Seleccione:</label>
+                        <select id="editOption">
+                            <option value="fechaNacimiento">Fecha de nacimiento</option>
+                            <option value="ubicacion">Ubicación</option>
+                            <option value="profesion">Profesión</option>
+                        </select>
+                        <input type="text" id="editInput" placeholder="Ingrese el nuevo valor">
+                        <button type="button" id="saveChanges">Guardar cambios</button>
+                    </form>
+                </div>
             </div>
             <div class="redes-sociales">
                 <a href="https://www.facebook.com/secretosparacontar/?ref=pages_you_manage" class="boton-redes facebook fab fa-facebook-f"><i class="icon-facebook"></i></a>
                 <a href="https://www.youtube.com/c/FundaciónSecretosparaContar" class="boton-redes youtube fab fa-youtube"><i class="icon-youtube"></i></a>
                 <a href="https://www.instagram.com/secretosparacontar/?hl=es" class="boton-redes instagram fab fa-instagram"><i class="icon-instagram"></i></a>
             </div>
-        </div>
     </section>
     <section class="section-right">
         <div class="contenedor-favoritos-notas">
