@@ -92,43 +92,6 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-document.addEventListener('DOMContentLoaded', function() {
-    // Función para cargar datos desde localStorage o establecer valores predeterminados
-    function cargarDatos() {
-        const fechaNacimiento = localStorage.getItem('fechaNacimiento') || '';
-        const ubicacion = localStorage.getItem('ubicacion') || '';
-        const profesion = localStorage.getItem('profesion') || '';
-
-        document.getElementById('spanFechaNacimiento').textContent = fechaNacimiento;
-        document.getElementById('spanUbicacion').textContent = ubicacion;
-        document.getElementById('spanProfesion').textContent = profesion;
-    }
-
-    // Cargar datos al cargar la página
-    cargarDatos();
-
-    // Evento para editar datos al hacer clic en el botón "Editar datos"
-    const editarDatosButton = document.querySelector('.editar-datos');
-    editarDatosButton.addEventListener('click', function() {
-        const nuevoFechaNacimiento = prompt('Ingrese una nueva fecha de nacimiento:');
-        const nuevaUbicacion = prompt('Ingrese una nueva ubicación:');
-        const nuevaProfesion = prompt('Ingrese una nueva profesión:');
-
-        if (nuevoFechaNacimiento) {
-            localStorage.setItem('fechaNacimiento', nuevoFechaNacimiento);
-        }
-        if (nuevaUbicacion) {
-            localStorage.setItem('ubicacion', nuevaUbicacion);
-        }
-        if (nuevaProfesion) {
-            localStorage.setItem('profesion', nuevaProfesion);
-        }
-
-        cargarDatos(); // Actualizar la visualización de los datos
-    });
-});
- 
-
 
 //Agregar libros guardados
 function saveBook(book) {
@@ -242,4 +205,53 @@ const mainMenu = document.querySelector('.main-menu');
 menuIcon.addEventListener('click', () => {
   mainMenu.classList.toggle('visible');
 });
+
+document.addEventListener("DOMContentLoaded", function() {
+    loadProfileData();
+
+    document.querySelector(".editar-datos").addEventListener("click", function() {
+        document.getElementById("editModal").style.display = "block";
+    });
+
+    document.querySelector(".close").addEventListener("click", function() {
+        document.getElementById("editModal").style.display = "none";
+    });
+
+    window.onclick = function(event) {
+        if (event.target == document.getElementById("editModal")) {
+            document.getElementById("editModal").style.display = "none";
+        }
+    }
+
+    document.getElementById("saveChanges").addEventListener("click", function() {
+        var editOption = document.getElementById("editOption").value;
+        var newValue = document.getElementById("editInput").value;
+
+        if (editOption === "fechaNacimiento") {
+            document.getElementById("spanFechaNacimiento").textContent = newValue;
+            localStorage.setItem("fechaNacimiento", newValue);
+        } else if (editOption === "ubicacion") {
+            document.getElementById("spanUbicacion").textContent = newValue;
+            localStorage.setItem("ubicacion", newValue);
+        } else if (editOption === "profesion") {
+            document.getElementById("spanProfesion").textContent = newValue;
+            localStorage.setItem("profesion", newValue);
+        }
+
+        document.getElementById("editModal").style.display = "none";
+    });
+});
+
+function loadProfileData() {
+    if (localStorage.getItem("fechaNacimiento")) {
+        document.getElementById("spanFechaNacimiento").textContent = localStorage.getItem("fechaNacimiento");
+    }
+    if (localStorage.getItem("ubicacion")) {
+        document.getElementById("spanUbicacion").textContent = localStorage.getItem("ubicacion");
+    }
+    if (localStorage.getItem("profesion")) {
+        document.getElementById("spanProfesion").textContent = localStorage.getItem("profesion");
+    }
+}
+
 
