@@ -57,3 +57,28 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'https://www.google.com';
     });
 });
+
+//Javascript para el registro
+
+document.addEventListener('DOMContentLoaded', (event) => {
+    const registerForm = document.getElementById('registerForm');
+
+    registerForm.addEventListener('submit', function(e) {
+        e.preventDefault(); // Evita el envío del formulario para poder guardar los datos primero
+
+        const name = document.getElementById('name').value;
+        const email = document.getElementById('email').value;
+        const password = document.getElementById('password').value;
+        const confirmPassword = document.getElementById('confirm-password').value;
+
+        // Guardar los datos en localStorage
+        localStorage.setItem('name', name);
+        localStorage.setItem('email', email);
+        localStorage.setItem('password', password);
+        localStorage.setItem('confirmPassword', confirmPassword);
+
+        // Redirigir a la página principal después de guardar los datos
+        window.location.href = 'principal.html';
+    });
+});
+

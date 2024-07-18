@@ -68,7 +68,6 @@ body {
     box-sizing: border-box;
     font-family: "Be Vietnam Pro", sans-serif;
     font-weight: 600;
-    margin-left: 25%;
 }
 
 .btn-login:hover {
@@ -139,11 +138,7 @@ a {
         
     }
 
-    .btn-login{
-        margin-left: 30%;
-    }
-
-    .social-login {
+      .social-login {
         flex-direction: column;
     }
 
