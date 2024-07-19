@@ -109,7 +109,6 @@ body {
   --text-color: #ffffff;
   }
   
-  /* Títulos en modo claro */
   h1, h2 {
   color: var(--text-color, #003865);
   }
