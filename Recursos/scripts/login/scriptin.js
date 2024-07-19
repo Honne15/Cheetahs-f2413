@@ -1,17 +1,33 @@
-document.getElementById('loginForm').addEventListener('submit', function(event) {
-    event.preventDefault();
-    const email = document.getElementById('email').value;
-    const password = document.getElementById('password').value;
-    
-    // Example validation logic
-    if (email && password) {
-        alert('Inicio de sesión exitoso!');
-        // You can add your login logic here
-    } else {
-        alert('Por favor, complete todos los campos.');
-    }
-});
 document.addEventListener('DOMContentLoaded', function() {
+    const loginForm = document.getElementById('loginForm');
+
+    loginForm.addEventListener('submit', function(event) {
+        event.preventDefault();
+        const email = document.getElementById('email').value.trim();
+        const password = document.getElementById('password').value.trim();
+
+        // Recuperar los datos almacenados en localStorage
+        let users = localStorage.getItem('users');
+        if (users) {
+            users = JSON.parse(users);
+
+            // Verificar si las credenciales coinciden con algún usuario en el localStorage
+            const user = users.find(user => user.email === email && user.password === password);
+
+            if (user) {
+                alert('Inicio de sesión exitoso!');
+                // Redirigir a la página principal si las credenciales son correctas
+                window.location.href = 'principal.html';
+            } else {
+                // Mostrar un mensaje de error si las credenciales son incorrectas
+                alert('Correo o contraseña incorrectos. Por favor, inténtelo de nuevo.');
+            }
+        } else {
+            // Mostrar un mensaje de error si no hay usuarios registrados
+            alert('No hay usuarios registrados. Por favor, regístrese primero.');
+        }
+    });
+
     const btnFacebook = document.getElementById('btn-facebook');
     const btnGoogle = document.getElementById('btn-google');
 
@@ -23,30 +39,3 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'https://accounts.google.com/signin';
     });
 });
-
-//Javascript del login
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    const loginForm = document.getElementById('loginForm');
-
-    loginForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Evita el envío del formulario para poder verificar los datos primero
-
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-
-        // Recuperar los datos almacenados en localStorage
-        const storedEmail = localStorage.getItem('email');
-        const storedPassword = localStorage.getItem('password');
-
-        // Verificar los datos ingresados con los almacenados
-        if (email === storedEmail && password === storedPassword) {
-            // Redirigir a la página principal si las credenciales son correctas
-            window.location.href = 'principal.html';
-        } else {
-            // Mostrar un mensaje de error si las credenciales son incorrectas
-            alert('Correo o contraseña incorrectos. Por favor, inténtelo de nuevo.');
-        }
-    });
-});
-

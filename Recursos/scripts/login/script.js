@@ -26,9 +26,12 @@ document.addEventListener('DOMContentLoaded', function () {
             return;
         }
 
-        // Si todas las validaciones pasan, enviar el formulario
+        // Guardar los datos en localStorage
+        saveUserData(name, email, password);
+
+        // Redirigir a la página principal después de guardar los datos
         alert('Registro exitoso');
-        registerForm.submit();
+        window.location.href = 'principal.html';
     });
 
     function validateName(name) {
@@ -44,7 +47,26 @@ document.addEventListener('DOMContentLoaded', function () {
     function validatePassword(password, confirmPassword) {
         return password.length >= 6 && password === confirmPassword;
     }
+
+    function saveUserData(name, email, password) {
+        // Obtener los datos existentes de localStorage
+        let users = localStorage.getItem('users');
+
+        if (users) {
+            users = JSON.parse(users);
+        } else {
+            users = [];
+        }
+
+        // Agregar el nuevo usuario al arreglo
+        const newUser = { name, email, password };
+        users.push(newUser);
+
+        // Guardar el arreglo actualizado en localStorage
+        localStorage.setItem('users', JSON.stringify(users));
+    }
 });
+
 document.addEventListener('DOMContentLoaded', function() {
     const btnFacebook = document.getElementById('btn-facebook');
     const btnGoogle = document.getElementById('btn-google');
@@ -57,28 +79,3 @@ document.addEventListener('DOMContentLoaded', function() {
         window.location.href = 'https://www.google.com';
     });
 });
-
-//Javascript para el registro
-
-document.addEventListener('DOMContentLoaded', (event) => {
-    const registerForm = document.getElementById('registerForm');
-
-    registerForm.addEventListener('submit', function(e) {
-        e.preventDefault(); // Evita el envío del formulario para poder guardar los datos primero
-
-        const name = document.getElementById('name').value;
-        const email = document.getElementById('email').value;
-        const password = document.getElementById('password').value;
-        const confirmPassword = document.getElementById('confirm-password').value;
-
-        // Guardar los datos en localStorage
-        localStorage.setItem('name', name);
-        localStorage.setItem('email', email);
-        localStorage.setItem('password', password);
-        localStorage.setItem('confirmPassword', confirmPassword);
-
-        // Redirigir a la página principal después de guardar los datos
-        window.location.href = 'principal.html';
-    });
-});
-
