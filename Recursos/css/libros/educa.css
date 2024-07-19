@@ -582,7 +582,7 @@ margin-top: 0.5%;
 
 /*Media queries*/
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1500px){
 
   .grid-container {
       grid-template-areas: 
