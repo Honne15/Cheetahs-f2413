@@ -12,20 +12,19 @@
 }
 
 h1 {
+  display: flex;
+  justify-content: center;
   /* Centra el texto horizontalmente */
   text-align: center;
   /* Fuente personalizada */
   font-family: "Be Vietnam Pro", sans-serif;
   /* Grosor de la fuente */
   font-weight: 700;
-  /* Color del texto (blanco) */
-  color: rgb(0, 0, 0);
   /* Tamaño de la fuente */
   font-size: 290%;
   /* Márgenes para ajustar la posición */
-  margin-left: 2%;
-  margin-top: 1%;
-  margin-bottom: -1%;
+  max-width: 1200px;
+  margin-left: 3%;
 }
   
   h2 {
@@ -47,6 +46,7 @@ h1 {
 body {
   min-height: 100vh;
   margin: 0;
+  width: 100%;
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -90,7 +90,7 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  margin-bottom: 10px;
+  width: 100%;
 }
 
 .header-icons {
@@ -105,35 +105,15 @@ body {
 
 /*Desde aqui es el switch*/
 [data-theme="dark"] {
-  /* Colores del tema oscuro */
-  --background-color: #121212;
-  --text-color: #fff;
-  --header-background: #1F2937;
-  /* ... otros colores oscuros ... */
+  --background-color: #171515;
+  --text-color: #ffffff;
   }
   
   /* Títulos en modo claro */
-  h1, h2, h3, h4, h5, h6 {
-  color: #003865; /* Color azul */
+  h1, h2 {
+  color: var(--text-color, #003865);
   }
   
-  /* Modo oscuro */
-  body.dark-mode {
-  background-color: #171515;
-  color: #ffffff;
-  }
-  
-  /* Títulos en modo oscuro */
-  body.dark-mode h1,
-  body.dark-mode h2,
-  body.dark-mode h3,
-  body.dark-mode h4,
-  body.dark-mode h5,
-  body.dark-mode h6 {
-  color: #ffffff; /* Color blanco */
-  }
-  
-
   .ui-switch {
     align-items: center;
     margin-top: 2%;
@@ -286,12 +266,12 @@ a {
   display: inline-flex;
   justify-content: center;
   align-items: center;
-  width: 55%;
-  max-width: 350px;
+  width: 100%;
+  max-width: 320px;
   height: 40px;
   margin: 1px auto;
   margin-top: 2%;
-  margin-bottom: 5%;
+  margin-bottom: 2%;
   padding: 7px 40px;
   background-color: rgb(255, 255, 255);
   border-radius: 10%;
@@ -303,8 +283,8 @@ a {
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.075);
   }
   
-  .search-input{
-  width: 90px;
+  .input{
+  width: 70px;
   border: none;
   outline: none;
   font-size: 0.9em;
@@ -358,20 +338,20 @@ a {
 
 .video-grid {
   display: grid;
-  grid-template-columns: 1fr; /* Una sola columna por defecto (móvil) */
-  grid-gap: 5px;
-  padding: 10px;
+  grid-template-columns: repeat(auto-fill, minmax(210px, 1fr));
+  gap: 13px;
   background-color: #ffffff00;
   border-radius: 10px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0);
   margin-right: auto;
   margin-left: auto;
-  width: 95%;
+  margin-bottom: 2%;
+  width: 80%;
   max-width: 1248px; /* Ajusta el ancho máximo según tu diseño */
 }
 
 .video-container {
-  position: static;
+  position: relative;
   background-color: #ffffff;
   box-shadow: none;
   border: 6px solid #003865;
@@ -379,7 +359,6 @@ a {
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   padding-bottom: 33px;
-  margin-left: 1%;
   margin-top: 20px;
 }
 
@@ -456,8 +435,12 @@ a {
   }
   
 main {
-margin-top: 30px;
-flex: 10;
+  margin-top: 30px;
+  flex: 10;
+  max-width: 1200px;
+  margin: 0 auto;
+  width: 100%;
+  background-color: var(--background-color, #ffffff);
 }
 
 /* Título del video */
@@ -497,14 +480,14 @@ z-index: 2; /* Asegura que esté por encima del contenedor de video */
 }
 
 .social-icons a {
-color: #003865; /* Color inicial de los íconos */
+color: var(--color-principal); /* Color inicial de los íconos */
 font-size: 24px; /* Tamaño de fuente de los íconos */
 margin: 0 5px; /* Espaciado entre los íconos */
 transition: color 0.3s ease; /* Transición suave para el cambio de color */
 }
 
 .social-icons a:hover {
-color: #f7931e; /* Cambia el color al naranja al pasar el cursor */
+color: #ff714b; /* Cambia el color al naranja al pasar el cursor */
 }
 
 
@@ -525,275 +508,83 @@ opacity: 0;
 
 
 
-.title-finish {
-text-align: center;
-font-size: 24px;
-color: white;
-font-family: "Be Vietnam Pro", sans-serif;
-font-weight: 600;
-}
 
-.icons {
-display: flex;
-align-items: center;
-justify-content: center;
-}
+@media (min-width: 780px) {
+  .grid-container {
+    grid-template-areas: 
+        "header header"  
+        "main main"
+        "section section"
+        "footer footer";
+    grid-template-columns: 1fr 1fr;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+} 
 
 
-
-@media (min-width: 768px) {
-  .videos {
-    padding: 20px;
-    display: flex;
-    flex-direction: column;
+.header {
+    flex-direction: row;
+    justify-content: space-between;
     align-items: center;
-    margin-top: 80px; /* Adjust margin as needed */
-    }
-    
-    .video-grid {
-    
+    width: 100%;
+}
+
+.header-content {
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    margin-bottom: 0;
+    width: 100%;
+}
+
+.image-logoh{
+  order: 1;
+}
+
+.header-icons {
+    order: 3;
+    margin-left: auto;
+    margin-right: 2%;
+}
+
+.search {
+  width: 100%;
+  position: absolute;
+  right: 20px;
+  transform: translateX(-51%);
+  
+}
+
+main, .videos, .footer {
+  width: 100vw;
+  max-width: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+.video-grid {
     display: grid;
     grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
-    padding: 10px;
-    background-color: #ffffff00;
-    border-radius: 10px;
-    box-shadow: 0 0 10px rgba(0, 0, 0, 0);
-    margin-right: auto;
-    margin-left: auto;
-    max-width: 1248px; /* Ajusta el ancho máximo según tu diseño */
-    }
-    
-    
-    
-    
-    .video-container {
-    position:static;
-    background-color: #ffffff;
-    box-shadow: none;
-    border: 6px solid #003865;
-    border-radius: 10px;
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    padding-bottom: 33px;
-    margin-left: 1%;
-    margin-top: 20px;
-    }
-    
-    main {
-    margin-top: 130px;
-    flex: 10;
-    }
-    
-    /* Título del video */
-    .video-title {
-    padding: 5px; /* Espaciado interno del título */
-    font-size: 19px; /* Tamaño de fuente */
-    font-weight: bold; /* Texto en negrita */
-    color: #003865; ; /* Color del texto */
-    text-align: center; /* Texto centrado */
-    margin-bottom: 0; /* Elimina el margen inferior */
-    }
-    
-    /* Efecto de aumento y sombra al pasar el cursor */
-    .video-container:hover {
-    transform: scale(1.05); /* Aumenta el tamaño en un 5% */
-    box-shadow: 0 8px 16px rgb(255, 255, 255); /* Añade sombra más pronunciada */
-    z-index: 1; /* Asegura que esté por encima de los íconos de redes sociales */
-    }
-    
-    /* Estilos para los iframes */
-    iframe {
-    width: 100%; /* Ancho del 100% del contenedor */
-    height: 200px; /* Altura fija del iframe */
-    border: none; /* Sin borde alrededor del iframe */
-    }
-    
-    /* Estilos para los íconos de redes sociales */
-    .social-icons {
-    position: absolute; /* Posición absoluta */
-    bottom: 10px; /* Distancia desde el borde inferior */
-    left: 50%; /* Alinea los íconos en el centro */
-    transform: translateX(-50%); /* Centra los íconos horizontalmente */
-    display: flex; /* Utiliza flexbox para alinear los íconos */
-    justify-content: center; /* Centra los íconos horizontalmente */
-    width: 100%; /* Ancho completo */
-    z-index: 2; /* Asegura que esté por encima del contenedor de video */
-    }
-    
-    .social-icons a {
-    color: #003865; /* Color inicial de los íconos */
-    font-size: 24px; /* Tamaño de fuente de los íconos */
-    margin: 0 5px; /* Espaciado entre los íconos */
-    transition: color 0.3s ease; /* Transición suave para el cambio de color */
-    }
-    
-    .social-icons a:hover {
-    color: #f7931e; /* Cambia el color al naranja al pasar el cursor */
-    }
-    
-    
-    @keyframes sparkle {
-    0% {
-    transform: translateY(0) rotate(0deg);
-    opacity: 1;
-    }
-    100% {
-    transform: translateY(-100vh) rotate(720deg);
-    opacity: 0;
-    }
-    }
-    
-    
-    
-    /* Estilos para el footer */
-    footer {
-    background: var(--color-background1);
-    padding: 50px 6px 220px 0; /* Ajusta el padding derecho */
-    margin: 0;
-    overflow: hidden;
-    height: 90px;
-    }
-    
-    .content-footer {
+    gap: 15px;
+  }
+
+  .footer-content{
     display: flex;
-    width: 70%;
-    justify-content: space-evenly;
-    margin: auto;
-    padding-bottom: 50px;
-    border-bottom: 1px solid white;
-    }
-    
-    .content-foo {
-    text-align: center;
-    }
-    
-    .content-foo h4 {
-    color: white;
-    border-bottom: 3px solid #d8d6d6;
-    padding-bottom: 10px;
-    margin-bottom: 10px;
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-weight: 600;
-    }
-    
-    .content-foo p {
-    color: white;
-    font-family: "Literata", serif;
-    font-size: 18px;
-    }
-    
-    .footer--img {
-    position: relative;
-    display: flex;
-    justify-content: center;
-    margin-top: -120px;
-    margin-left: 930px;
-    margin-bottom: 40px;
-    }
-    
-    .footer--img img {
-    width: 100px;
-    height: 100px;
-    }
-    
-    .footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 5px;
-    }
-    
-    .footer a:hover {
-    text-decoration: underline;
-    }
-    
-    
-    .title-finish {
-    text-align: center;
-    font-size: 24px;
-    color: white;
-    font-family: "Be Vietnam Pro", sans-serif;
-    font-weight: 600;
-    }
-    
-    
-    
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: flex-start;
+    flex-wrap: wrap;
+    width: 100%;
+  }
+
+  .footer-section{
+    flex: 1;
+    min-width: 200px;
+    margin: 15px;
+    margin-bottom: 5%;
+  }
 
 
-     
-  .footer a {
-    color: white;
-    text-decoration: none;
-    margin: 0 5px;
-    }
-    
-    .footer a:hover {
-    text-decoration: underline;
-    }
-
-    footer {
-      padding: 20px 5px;
-      height: auto;
-      background: var(--color-background1)
-    }
-    
-    .content-footer {
-      display: flex;
-      flex-direction: column;
-      width: 70%;
-      justify-content: space-evenly;
-      margin: auto;
-      padding-bottom: 50px;
-      border-bottom: 1px solid white;
-    }
-    
-    .content-foo {
-      text-align: center;
-      }
-      
-    
-    .footer--img {
-      margin: 20px auto;
-    }
-        
-      
-      .content-foo h4 {
-      color: white;
-      border-bottom: 3px solid #d8d6d6;
-      padding-bottom: 10px;
-      margin-bottom: 10px;
-      font-family: "Be Vietnam Pro", sans-serif;
-      font-weight: 600;
-      }
-      
-      .content-foo p {
-      color: white;
-      font-family: "Literata", serif;
-      font-size: 18px;
-      }
-      
-      .footer--img {
-      position: relative;
-      display: flex;
-      justify-content: center;
-      margin-top: -120px;
-      margin-left: 930px;
-      margin-bottom: 40px;
-      }
-      
-      .footer--img img {
-      width: 100px;
-      height: 100px;
-      }
-      
-      .footer a {
-      color: white;
-      text-decoration: none;
-      margin: 0 5px;
-      }
-      
-      .footer a:hover {
-      text-decoration: underline;
-      }
+  
 }
-
