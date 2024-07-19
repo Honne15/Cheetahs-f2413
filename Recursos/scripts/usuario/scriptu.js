@@ -123,7 +123,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
         const eliminarButton = document.createElement('button');
         eliminarButton.textContent = 'Eliminar';
-        eliminarButton.classList.add('eliminar-button');
+        eliminarButton.classList.add('button');
         eliminarButton.addEventListener('click', function() {
             eliminarLibro(index);
         });

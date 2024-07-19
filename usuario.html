@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Fundación Secretos Para Contar</title>
+    <title>Usuario</title>
     <link rel="stylesheet" href="https://pro.fontawesome.com/releases/v5.10.0/css/all.css" crossorigin="anonymous">
     <link rel="stylesheet" href="/Recursos/css/usuario/stylesu.css">
     <link rel="icon" href="Recursos/Img/img_libros/logo.png" type="image/x-icon">
@@ -18,37 +18,37 @@
         <div class="header-icons">
             <div class="icons">   
                 <ul class="main-icon">
-                    <li class="menu-icon" id="menuIcon"><i class="fa-solid fa-bars"><span class="tooltips">Menú</span></i>
+                    <li class="menu-icon" id="menuIcon"><i class="fa-solid fa-bars"></i>
                     
                         <div class="menu-icons">
                             <ul class="main-menu">
                                 <li class="main-menu__item">
                                     <a href="principal.html" class="main-menu__link">
-                                        <i class="fa-solid fa-house-chimney"><span class="tooltip">Inicio</span></i>
+                                        <i class="fa-solid fa-house-chimney"></i>
                                     </a>
                                 </li>
 
                                 <li class="main-menu__item">
                                     <a href="libros.html" class="main-menu__link">
-                                        <i class="fa-solid fa-book"><span class="tooltip">Libros</span></i>
+                                        <i class="fa-solid fa-book"></i>
                                     </a>
                                 </li>
                     
                                 <li class="main-menu__item">
                                     <a href="educa.html" class="main-menu__link" rel="noopener noreferrer">
-                                        <i class="fa-solid fa-chalkboard-user"><span class="tooltip">Educa</span></i>
+                                        <i class="fa-solid fa-chalkboard-user"></i>
                                     </a>
                                 </li>
             
                                 <li class="main-menu__item">
                                     <a href="videos.html" class="main-menu__link">
-                                        <i class="fa-solid fa-video"><span class="tooltip">Videos</span></i>
+                                        <i class="fa-solid fa-video"></i>
                                     </a>
                                 </li>
             
                                 <li class="main-menu__item">
                                     <a href="login.html" class="main-menu__link">
-                                        <i class="fa-solid fa-arrow-right-from-bracket"><span class="tooltip">Salir</span></i>
+                                        <i class="fa-solid fa-arrow-right-from-bracket"></i>
                                     </a>
                                 </li>
                             </ul>
@@ -86,27 +86,28 @@
         </div>
         <div class="perfil-usuario-body">
             <div class="perfil-usuario-bio">
-                <h3 class="titulo">
-                    <span id="username">Nombre Completo</span>
-                    <i class="fas fa-pencil-alt" id="editNameIcon"></i>
-                </h3>
+                    <h2 id="username" class="username"><i class="fas fa-pencil-alt" id="editNameIcon"></i>Nombre Completo</h2>
                 <p class="texto" id="bioText">
                     Pon lo que piensas o lo que te gusta.
                 </p>
-                <button type="button" class="editar-boton" id="editBioButton">Editar presentación</button>
+                <div class="button-container">
+                <button type="button" class="button editar-boton" id="editBioButton">Editar presentación</button>
+                </div>
             </div>
             <div class="perfil-usuario-footer">
                 <ul class="lista-datos">
-                    <li><i class="icono fas fa-calendar-alt"></i> Fecha de nacimiento: <span id="spanFechaNacimiento"></span></li>
-                    <li><i class="icono fas fa-map-marker-alt"></i> Ubicación: <span id="spanUbicacion"></span></li>
-                    <li><i class="icono fas fa-building"></i> Profesión: <span id="spanProfesion"></span></li>
+                    <li><i class="icono fas fa-calendar-alt"></i> Fecha de nacimiento: <p class="presentation" id="spanFechaNacimiento"></p></li>
+                    <li><i class="icono fas fa-map-marker-alt"></i> Ubicación: <p class="presentation" id="spanUbicacion"></p></li>
+                    <li><i class="icono fas fa-building"></i> Profesión: <p class="presentation" id="spanProfesion"></p></li>
                 </ul>
-                <button class="editar-datos">Editar datos</button>                                  
+            <div class="button-container">
+                <button class="button editar-datos">Editar datos</button>
+            </div>                                 
             </div>
             </div>
             <div id="editModal" class="modal">
                 <div class="modal-content">
-                    <span class="close">&times;</span>
+                    <p class="close">&times;</p>
                     <h2>Editar Información</h2>
                     <form id="editForm">
                         <label for="editOption">Seleccione:</label>
@@ -135,13 +136,45 @@
                     </div>
     
             <div class="notas-container" id="notas">
-                <h2>Notas</h2>
+                <h2 class="text-notes">Notas</h2>
                 <textarea id="nuevaNota" placeholder="Escribe tu nota aquí..."></textarea>
-                <button id="agregarNotaBtn" class="boton">Agregar Nota</button>
+                <div class="button-container">
+                <button id="agregarNotaBtn" class="button agregar-nota-btn">Agregar Nota</button>
+                </div>
                 <ul id="listaNotas"></ul>
             </div>
         </div>
     </section>
+
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h2>Número</h2>
+                <div class="line1"></div>
+                <p>(57) 604 322 06 90</p>
+            </div>
+            <div class="footer-section">
+                <h2>Email</h2>
+                <div class="line2"></div>
+                <p>info@secretosparacontar.org</p>
+            </div>
+            <div class="footer-section">
+                <h2>Ubicación</h2>
+                <div class="line3"></div>
+                <p>Calle 11A #43B - 41</p>
+            </div>
+            </div>
+            <div class="footer-bottom">
+               <h2>&copy; Secretos para contar</h2>
+               <div class="icons-foo"></div>
+                   <a href="https://www.facebook.com/secretosparacontar?mibextid=ZbWKwL" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                   <a href="https://www.instagram.com/secretosparacontar?igsh=emE1MGUyZ2dpMXl0" target="_blank"><i class="fab fa-instagram"></i></a>
+                   <a href="https://wa.me/+576043220690" target="_blank"><i class="fa-brands fa-whatsapp"></i></a>
+                   <a href="https://secretosparacontar@gmail.com" target="_blank"><i class="fa-regular fa-envelope"></i></a>
+                   <a href="https://www.youtube.com/c/FundaciónSecretosparaContar" target="_blank"><i class="fab fa-youtube"></i></a>
+            </div>
+        </footer>
+
     <script src="/Recursos/scripts/usuario/scriptu.js"></script>
     <script src="/Recursos/scripts/usuario/modo.js"></script>
 </body>

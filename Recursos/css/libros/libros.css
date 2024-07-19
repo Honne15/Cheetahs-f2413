@@ -187,10 +187,6 @@ height: 0;
   font-size: 1.5rem;
 }
 
-i:hover {
-  background-color: #5F8DB5;
-}
-
 .img-boy {
   display: none;
 }
@@ -254,10 +250,6 @@ ul {
   text-decoration: none;
 }
 
-i:hover {
-  background-color: #5F8DB5;
-}
-
 a {
   text-decoration: none;
 }
@@ -267,10 +259,6 @@ a {
   grid-area: main;
   width: 100%;
   background-color: var(--header-background, #ffffff);
-}
-
-h1 .text-start{
-  color: #7A7A7A;
 }
 
 .category-text .mobile-text,
@@ -691,7 +679,7 @@ margin-top: 0.5%;
 
   .category-text .desktop-text{
     display: inline;
-    color: var(--color-h1);
+    color: var(--color-title, #7A7A7A);
     font-family: "Be Vietnam Pro", sans-serif;
     font-weight: 700;
     font-size: 40px;

@@ -256,10 +256,6 @@ a {
   background-color: var(--header-background, #ffffff);
 }
 
-h1 .text-start{
-  color: #7A7A7A;
-}
-
 .category-text .mobile-text,
 .category-text .desktop-text {
     display: none;
@@ -668,7 +664,7 @@ margin-top: 0.5%;
 
   .category-text .desktop-text{
     display: inline;
-    color: var(--color-h1);
+    color: var(--color-title, #7A7A7A);;
     font-family: "Be Vietnam Pro", sans-serif;
     font-weight: 700;
     font-size: 40px;
