@@ -750,6 +750,9 @@ margin-top: 0.5%;
   }
 
   .footer-section{
-    margin: 15px 30px;
+    margin: 15px;
+    flex: 1;
+    min-width: 200px;
+    margin: 15px;
   }
 }
