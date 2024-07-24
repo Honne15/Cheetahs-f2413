@@ -86,9 +86,10 @@ body {
 .pdf-viewer canvas {
   width: 100%;
   max-width: 100%; /* Asegura que el visor ocupe todo el ancho disponible */
-  height: 80vh; /* Altura inicial, ajusta según tu diseño */
-  margin: 0 auto; /* Centrar el visor */
+  margin: 0 auto;
   margin-top: 10%;
+  height: calc(100vh - 60px); /* Ajusta 60px a la altura real de tu header */
+  margin-top: 60px; /* Debe ser igual a la altura del header */
 }
 
 .favorite{
@@ -109,6 +110,7 @@ body {
   position: fixed;
   bottom: 0;
   left: 0;
+  margin-bottom: 1%;
   width: 100%;
   z-index: 1000;
   padding: 10px;
@@ -155,8 +157,23 @@ body {
 
 .progress-bar {
   width: 0;
-  height: 10px;
+  height: 15px;
   background-color: var(--color-principal);
+}
+
+.progress-bar {
+  position: relative;
+}
+
+.progress-bar::after {
+  content: attr(data-progress);
+  position: absolute;
+  right: 0;
+  top: 40%;
+  transform: translate(120%, -50%);
+  color: #ffffff; /* Ajusta el color según tu diseño */
+  font-size: 13px;
+  font-weight: bold;
 }
 
 .ui-switch{
@@ -329,7 +346,7 @@ body {
   }
 
   .progress-bar {
-    height: 10px;
+    height: 15px;
   }
 
   
