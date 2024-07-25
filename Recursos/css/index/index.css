@@ -43,7 +43,7 @@ header {
     height: 600px;
     background: var(--color-title); 
     background: -webkit-linear-gradient(to right, hsla(204, 26%, 25%, 0.493), hsla(33, 12%, 82%, 0.473)), url(../img/Tallerista-y-grupo-de-niños.jpg);
-    background: linear-gradient(to right, hsla(204, 26%, 25%, 0.76), hsla(33, 12%, 82%, 0.651)), url(/Recursos/img/img_index/Tallerista-y-grupo-de-niños.jpg); 
+    background: linear-gradient(to right, hsla(204, 26%, 25%, 0.76), hsla(33, 12%, 82%, 0.651)), url(/Recursos/img/img_index/Montañas.jpg); 
     background-size: cover;
     background-attachment: fixed;
     position: relative;
