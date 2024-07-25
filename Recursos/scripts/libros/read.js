@@ -95,31 +95,56 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
 //Barra de progreso
-    function setupScrollProgress(pdfViewer, pdfDoc, totalPages) {
-        const progressBarContainer = document.getElementById('progress-bar-container');
-        const progressBar = document.getElementById('progressBar');
-    
-        function updateProgressBar() {
-            const scrollTop = window.scrollY;
-            const documentHeight = pdfViewer.scrollHeight;
-            const windowHeight = window.innerHeight;
-            const scrollProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
-            const roundedProgress = scrollProgress.toFixed(0);
-    
-            progressBar.style.width = roundedProgress + '%';
-            progressBar.setAttribute('data-progress', roundedProgress + '%');
-            progressBarContainer.style.display = 'block';
-    
-            const currentPage = Math.ceil(scrollTop / pdfViewer.clientHeight) + 1;
-            localStorage.setItem(`book-${bookId}-lastPage`, currentPage);
-            localStorage.setItem(`book-${bookId}-lastScroll`, scrollTop);
-        }
-    
-        window.addEventListener('scroll', updateProgressBar);
-        window.addEventListener('resize', updateProgressBar);
-    
-        setTimeout(updateProgressBar, 200);
+function setupScrollProgress(pdfViewer, pdfDoc, totalPages) {
+    const progressBarContainer = document.getElementById('progress-bar-container');
+    const progressBar = document.getElementById('progressBar');
+
+    function updateProgressBar() {
+        const scrollTop = window.scrollY;
+        const documentHeight = pdfViewer.scrollHeight;
+        const windowHeight = window.innerHeight;
+        const scrollProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
+        const roundedProgress = scrollProgress.toFixed(0);
+
+        progressBar.style.width = roundedProgress + '%';
+        progressBar.setAttribute('data-progress', roundedProgress + '%');
+        progressBarContainer.style.display = 'block';
+
+        const currentPage = Math.ceil(scrollTop / pdfViewer.clientHeight) + 1;
+        localStorage.setItem(`book-${bookId}-lastPage`, currentPage);
+        localStorage.setItem(`book-${bookId}-lastScroll`, scrollTop);
     }
+
+    window.addEventListener('scroll', updateProgressBar);
+    window.addEventListener('resize', updateProgressBar);
+
+    setTimeout(updateProgressBar, 200);
+}
+
+    //Función para guardar el progreso de lectura
+    function guardarProgresoLectura() {
+        const visorPDF = document.getElementById('pdf-viewer');
+        const scrollTop = window.scrollY;
+        const alturaTotal = visorPDF.scrollHeight - window.innerHeight;
+        const progreso = scrollTop / alturaTotal;
+        
+        localStorage.setItem(`libro-${bookId}-progreso`, progreso);
+    }
+
+    function cargarProgresoLectura() {
+        const progreso = parseFloat(localStorage.getItem(`libro-${bookId}-progreso`)) || 0;
+        const visorPDF = document.getElementById('pdf-viewer');
+        const alturaTotal = visorPDF.scrollHeight - window.innerHeight;
+        const posicionScroll = progreso * alturaTotal;
+        
+        window.scrollTo(0, posicionScroll);
+    }
+
+    setInterval(guardarProgresoLectura, 5000);
+
+    // Llama a cargarProgresoLectura después de que el PDF se haya renderizado
+    // Es posible que necesites ajustar dónde se llama esto según tu lógica de renderizado de PDF
+    document.addEventListener('pdf-renderizado', cargarProgresoLectura);
 
     // Función para el reproductor de audio
     function setupAudioPlayer(audioUrl, isSpreaker, isSpotify) {
