@@ -479,7 +479,8 @@ flex-wrap: wrap;
 
 .download-link,
 .read-link,
-.listen-link{
+.listen-link,
+.guia-link {
 display: inline-flex;
 align-items: center;
 justify-content: center;
@@ -509,15 +510,25 @@ margin-left: -2%;
 margin-left: 2%;
 }
 
+.guia-link{
+  margin-left: 2%;
+}
+
+.listen-link{
+  margin-left: -2%;
+}
+
 .download-link i,
 .read-link i,
-.listen-link i {
+.listen-link i,
+.guia-link i {
 margin-right: 3px; /* Agrega un margen derecho de 5px al icono */
 }
 
 .download-link:hover,
 .read-link:hover,
-.listen-link:hover {
+.listen-link:hover,
+.guia-link:hover {
 background-color: #ff714f;
 }
 
@@ -597,7 +608,7 @@ margin-top: 0.5%;
 
 /*Media queries*/
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1500px){
 
   .grid-container {
       grid-template-areas: 
@@ -753,7 +764,8 @@ margin-top: 0.5%;
 
   .download-link,
   .read-link,
-  .listen-link{
+  .listen-link,
+  .guia-link {
     font-size: 15px;
   }
 
@@ -765,6 +777,9 @@ margin-top: 0.5%;
   }
 
   .footer-section{
-    margin: 15px 30px;
+    margin: 15px;
+    flex: 1;
+    min-width: 200px;
+    margin: 15px;
   }
 }
