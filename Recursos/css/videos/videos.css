@@ -12,19 +12,16 @@
 }
 
 h1 {
+  text-align: center;
+  font-family: "Be Vietnam Pro", sans-serif;
+  font-weight: 700;
+  font-size: 290%;
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
   display: flex;
   justify-content: center;
-  /* Centra el texto horizontalmente */
-  text-align: center;
-  /* Fuente personalizada */
-  font-family: "Be Vietnam Pro", sans-serif;
-  /* Grosor de la fuente */
-  font-weight: 700;
-  /* Tamaño de la fuente */
-  font-size: 290%;
-  /* Márgenes para ajustar la posición */
-  max-width: 1200px;
-  margin-left: 3%;
+  align-items: center;
 }
   
   h2 {
@@ -501,12 +498,6 @@ opacity: 0;
 }
 
 
-
-/* Estilos para el footer */
-
-
-
-
 @media (min-width: 780px) {
   .grid-container {
     grid-template-areas: 
@@ -580,9 +571,6 @@ main, .videos, .footer {
     flex: 1;
     min-width: 200px;
     margin: 15px;
-    margin-bottom: 5%;
+    margin-bottom: 2%;
   }
-
-
-  
 }

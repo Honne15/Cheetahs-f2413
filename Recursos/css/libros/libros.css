@@ -597,7 +597,7 @@ margin-top: 0.5%;
 
 /*Media queries*/
 
-@media (min-width: 768px) {
+@media (min-width: 768px) and (max-width: 1500px){
 
   .grid-container {
       grid-template-areas: 
@@ -765,6 +765,9 @@ margin-top: 0.5%;
   }
 
   .footer-section{
-    margin: 15px 30px;
+    margin: 15px;
+    flex: 1;
+    min-width: 200px;
+    margin: 15px;
   }
 }
