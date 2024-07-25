@@ -15,24 +15,24 @@ menuCate.addEventListener('click', () => {
 });
 
 //Javasript para el carrusel que va en los libros
-const url = '/Recursos/pdfs/';
+const url = '/Recursos/pdfs/guias/';
 
 const conCategoria = [
-      ['1', '/Recursos/img/img_libros/Portada-reconocer-bases-de-los-aprendizajes-tomo-1.webp', 'Reconocer 1', 'reconocer', '/Recursos/pdfs/RECONOCER_1.pdf'],
-      ['2', '/Recursos/img/img_libros/portada-reconocer-2.webp', 'Reconocer 2', 'reconocer', '/Recursos/pdfs/RECONOCER_2.pdf'],
-      ['3', '/Recursos/img/img_libros/portad-reconocer-5-y-6.webp', 'Reconocer 5 y 6', 'reconocer', '/Recursos/pdfs/RECONOCER_5_Y_6.pdf'],
-      ['4', '/Recursos/img/img_libros/portada-reconocer-7.webp', 'Reconocer 7', 'reconocer', '/Recursos/pdfs/RECONOCER_7.pdf'],
-      ['5', '/Recursos/img/img_libros/portada-reconocer-8.webp', 'Reconocer 8', 'reconocer', '/Recursos/pdfs/RECONOCER_8.pdf'],
-      ['6', '/Recursos/img/img_libros/plan-lector-1.webp', 'Plan lector', 'lector', '/Recursos/pdfs/PLAN_LECTOR.pdf'],
-      ['7', '/Recursos/img/img_libros/Portada-plan-lector-bachillerato.webp', 'Plan lector bachillerato', 'lector', '/Recursos/pdfs/PLAN_LECTOR_BACHILLERATO.pdf'],
-      ['8', '/Recursos/img/img_libros/portada-guia-1.webp', 'Guía de talleres 1', 'guias','/Recursos/pdfs/GUIA_DE_TALLERES_1.pdf'],
-      ['9', '/Recursos/img/img_libros/portada-guia-de-talleres-2.webp', 'Guía de talleres 2', 'guias', '/Recursos/pdfs/GUIA_DE_TALLERES_2.pdf'],
-      ['10', '/Recursos/img/img_libros/guia2.png', 'Guía de talleres 2 - Planeta vivo', 'guia', '/Recursos/pdfs/GUIA_DE_TALLERES_2_PLANETA.pdf'],
-      ['11', '/Recursos/img/img_libros/portada_guia_de_talleres3.webp', 'Guía de talleres 3', 'guias', '/Recursos/pdfs/GUIA_DE_TALLERES_3.pdf'],
-      ['12', '/Recursos/img/img_libros/portada-guia-4.webp', 'Guía de talleres 4', 'guias', '/Recursos/pdfs/GUIA_DE_TALLERES_4.pdf'],
-      ['13', '/Recursos/img/img_libros/portada-guia-de-talleres-5.webp', 'Guía de talleres 5', 'guias', '/Recursos/pdfs/GUIA_DE_TALLERES_5.pdf'],
-      ['14', '/Recursos/img/img_libros/portada-guia-6.webp', 'Guía de talleres 6', 'guias', '/Recursos/pdfs/GUIA_DE_TALLERES_6.pdf'],
-      ['15', '/Recursos/img/img_libros/portada-el-palabrero.webp', 'El palabrero', 'palabrero', '/Recursos/pdfs/EL_PALABRERO.pdf']
+      ['1', '/Recursos/img/img_libros/Portada-reconocer-bases-de-los-aprendizajes-tomo-1.webp', 'Reconocer 1', 'reconocer', '/Recursos/pdfs/guias/RECONOCER_1.pdf'],
+      ['2', '/Recursos/img/img_libros/portada-reconocer-2.webp', 'Reconocer 2', 'reconocer', '/Recursos/pdfs/guias/RECONOCER_2.pdf'],
+      ['3', '/Recursos/img/img_libros/portad-reconocer-5-y-6.webp', 'Reconocer 5 y 6', 'reconocer', '/Recursos/pdfs/guias/RECONOCER_5_Y_6.pdf'],
+      ['4', '/Recursos/img/img_libros/portada-reconocer-7.webp', 'Reconocer 7', 'reconocer', '/Recursos/pdfs/guias/RECONOCER_7.pdf'],
+      ['5', '/Recursos/img/img_libros/portada-reconocer-8.webp', 'Reconocer 8', 'reconocer', '/Recursos/pdfs/guias/RECONOCER_8.pdf'],
+      ['6', '/Recursos/img/img_libros/plan-lector-1.webp', 'Plan lector', 'lector', '/Recursos/pdfs/guias/PLAN_LECTOR.pdf'],
+      ['7', '/Recursos/img/img_libros/Portada-plan-lector-bachillerato.webp', 'Plan lector bachillerato', 'lector', '/Recursos/pdfs/guias/PLAN_LECTOR_BACHILLERATO.pdf'],
+      ['8', '/Recursos/img/img_libros/portada-guia-1.webp', 'Guía de talleres 1', 'guias','/Recursos/pdfs/guias/GUIA_DE_TALLERES_1.pdf'],
+      ['9', '/Recursos/img/img_libros/portada-guia-de-talleres-2.webp', 'Guía de talleres 2', 'guias', '/Recursos/pdfs/guias/GUIA_DE_TALLERES_2.pdf'],
+      ['10', '/Recursos/img/img_libros/guia2.png', 'Guía de talleres 2 - Planeta vivo', 'guia', '/Recursos/pdfs/guias/GUIA_DE_TALLERES_2_PLANETA.pdf'],
+      ['11', '/Recursos/img/img_libros/portada_guia_de_talleres3.webp', 'Guía de talleres 3', 'guias', '/Recursos/pdfs/guias/GUIA_DE_TALLERES_3.pdf'],
+      ['12', '/Recursos/img/img_libros/portada-guia-4.webp', 'Guía de talleres 4', 'guias', '/Recursos/pdfs/guias/GUIA_DE_TALLERES_4.pdf'],
+      ['13', '/Recursos/img/img_libros/portada-guia-de-talleres-5.webp', 'Guía de talleres 5', 'guias', '/Recursos/pdfs/guias/GUIA_DE_TALLERES_5.pdf'],
+      ['14', '/Recursos/img/img_libros/portada-guia-6.webp', 'Guía de talleres 6', 'guias', '/Recursos/pdfs/guias/GUIA_DE_TALLERES_6.pdf'],
+      ['15', '/Recursos/img/img_libros/portada-el-palabrero.webp', 'El palabrero', 'palabrero', '/Recursos/pdfs/guias/EL_PALABRERO.pdf']
   ];
 
   let reconocer = [];

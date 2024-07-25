@@ -2,6 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const bookId = urlParams.get('id');
     let pdfLibro = '/Recursos/pdfs/' + bookId + '.pdf';
+    let pdfGuia = '/Recursos/pdfs/guias/' + bookId + '.pdf';
 
     const conCategoria = JSON.parse(localStorage.getItem('conCategoria'));
 
@@ -10,8 +11,14 @@ document.addEventListener('DOMContentLoaded', function() {
         const libro = conCategoria.find((fila) => fila[0] === id);
         if (libro) {
             pdfLibro = libro[4];
+            pdfGuia = libro[6];
             console.log('pdfLibro', pdfLibro);
-            mostrarPDF(pdfLibro);
+            console.log('pdfGuia', pdfGuia);
+            if (window.location.pathname.includes('leerlibro.html')) {
+                mostrarPDF(pdfLibro);
+            } else if (window.location.pathname.includes('leerguia.html')) {
+                mostrarPDF(pdfGuia);
+            }
             setupGuardarButton(libro);
             if (libro.length > 5) {
                 const audioUrl = libro[5] || '';
