@@ -8,7 +8,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Función para obtener el libro por su ID
     function getBook(id) {
-        const libro = conCategoria.find((fila) => fila[0] === id);
+        const libro = conFavoritos.find((fila) => fila[0] === id);
         if (libro) {
             pdfLibro = libro[4];
             pdfGuia = libro[6];

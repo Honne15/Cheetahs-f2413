@@ -3,8 +3,8 @@ const urls = '/Recursos/pdfs/guias/';
 
 const conFavoritos = [
       ['1', '/Recursos/pdfs/A_QUE_TE_COJO_RATON.pdf'],
-      ['13', '/Recursos/pdfs/ENTRE_CUENTO_Y_CUENTO.pdf'],
-      ['24', '/Recursos/pdfs/LOS_PRIMEROS_ANOS.pdf']
+      ['2', '/Recursos/pdfs/ENTRE_CUENTO_Y_CUENTO.pdf'],
+      ['3', '/Recursos/pdfs/LOS_PRIMEROS_ANOS.pdf']
   ];
 
   window.addEventListener('load', () => {
