@@ -15,7 +15,7 @@ menuCate.addEventListener('click', () => {
 });
 
 //Javasript para el carrusel que va en los libros
-const url = '/Recursos/pdfs/';
+const url = '/Recursos/pdfs/guias/';
 
 const conCategoria = [
       ['1', '/Recursos/img/img_libros/Portada-reconocer-bases-de-los-aprendizajes-tomo-1.webp', 'Reconocer 1', 'reconocer', '/Recursos/pdfs/guias/RECONOCER_1.pdf'],

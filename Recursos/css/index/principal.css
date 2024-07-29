@@ -627,7 +627,7 @@ main .content__text img {
   color: #FFD700;
 }
 
-.read-button {
+.buttonRead {
   background: #FA4616;
   text-decoration: none;
   border: none;
@@ -641,7 +641,7 @@ main .content__text img {
   font-weight: 600;
 }
 
-.read-button:hover {
+.buttonRead:hover {
   background: #FF714B;
 }
 
