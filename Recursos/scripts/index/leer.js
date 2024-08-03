@@ -1,5 +1,4 @@
 const url = '/Recursos/pdfs/';
-const urls = '/Recursos/pdfs/guias/';
 
 const conFavoritos = [
       ['1', '/Recursos/pdfs/A_QUE_TE_COJO_RATON.pdf'],
