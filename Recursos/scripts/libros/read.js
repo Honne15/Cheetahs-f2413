@@ -12,6 +12,7 @@ document.addEventListener('DOMContentLoaded', function() {
         if (libro) {
             pdfLibro = libro[4];
             pdfGuia = libro[6];
+            audioUrl = libro[5] || '';
             console.log('pdfLibro', pdfLibro);
             console.log('pdfGuia', pdfGuia);
             if (window.location.pathname.includes('leerlibro.html')) {
@@ -38,120 +39,93 @@ document.addEventListener('DOMContentLoaded', function() {
     }
 
     // Función para mostrar el PDF en el visor
+    let pdfDoc_;
+
     function mostrarPDF(url) {
         const pdfjsLib = window['pdfjs-dist/build/pdf'];
         pdfjsLib.GlobalWorkerOptions.workerSrc = 'https://cdnjs.cloudflare.com/ajax/libs/pdf.js/2.10.377/pdf.worker.min.js';
     
-        pdfjsLib.getDocument(url).promise.then(function(pdfDoc_) {
+        pdfjsLib.getDocument(url).promise.then(function(pdf) {
+            pdfDoc_ = pdf;
             const pdfViewer = document.getElementById('pdf-viewer');
-            pdfViewer.classList.add('pdf-viewer')
-            
+            pdfViewer.classList.add('pdf-viewer');
             pdfViewer.innerHTML = '';
     
-            let pageNum = 1;
-            const totalPages = pdfDoc_.numPages;
+            function renderPage(pageNum) {
+                pdfDoc_.getPage(pageNum).then(function(page) {
+                    const viewportWidth = window.innerWidth;
+                    const scale = viewportWidth < 768 ? 0.45 : 1.5;
+                    const viewport = page.getViewport({ scale: scale });
     
-            function renderPage(page) {
-                const viewportWidth = window.innerWidth;
-            
-                if (viewportWidth < 768) {
-                    scale = 0.45;
-                } else {
-                    scale = 1.5;
-                }
+                    const canvas = document.createElement('canvas');
+                    const ctx = canvas.getContext('2d');
+                    canvas.height = viewport.height;
+                    canvas.width = viewport.width;
     
-                const viewport = page.getViewport({ scale: scale });
+                    const renderContext = {
+                        canvasContext: ctx,
+                        viewport: viewport
+                    };
     
-                const canvas = document.createElement('canvas');
-                const ctx = canvas.getContext('2d');
-                canvas.height = viewport.height;
-                canvas.width = viewport.width;
+                    page.render(renderContext).promise.then(() => {
+                        pdfViewer.appendChild(canvas);
     
-                const renderContext = {
-                    canvasContext: ctx,
-                    viewport: viewport
-                };
-    
-                page.render(renderContext).promise.then(() => {
-                    pdfViewer.appendChild(canvas);
-    
-                    if (pageNum === 1) {
-                        setupScrollProgress(pdfViewer, pdfDoc_, totalPages);
-                        
-                        const lastPage = parseInt(localStorage.getItem(`book-${bookId}-lastPage`)) || 1;
-                        const lastScroll = parseInt(localStorage.getItem(`book-${bookId}-lastScroll`)) || 0;
-                        
-                        if (lastPage > 1) {
-                            pdfDoc_.getPage(lastPage).then(renderPage);
+                        if (pageNum < pdfDoc_.numPages) {
+                            renderPage(pageNum + 1);
+                        } else {
+                            setupScrollProgress(pdfViewer, pdfDoc_, pdfDoc_.numPages);
+                            loadSavedProgress();
+                            if (audioUrl) {
+                                setupAudioPlayer(audioUrl, isSpreaker, isSpotify);
+                            }
                         }
-                        
-                        setTimeout(() => {
-                            window.scrollTo(0, lastScroll);
-                        }, 100);
-                    }
-    
-                    if (pageNum < totalPages) {
-                        pageNum++;
-                        pdfDoc_.getPage(pageNum).then(renderPage);
-                    }
+                    });
+                
                 });
             }
     
-            pdfDoc_.getPage(pageNum).then(renderPage);
+            renderPage(1);
+        }).catch(error => {
+            console.error('Error al cargar el PDF:', error);
         });
     }
 
 //Barra de progreso
-function setupScrollProgress(pdfViewer, pdfDoc, totalPages) {
-    const progressBarContainer = document.getElementById('progress-bar-container');
-    const progressBar = document.getElementById('progressBar');
+    function setupScrollProgress(pdfViewer, pdfDoc_, totalPages) {
+        console.log('setupScrollProgress existente');
+        const progressBarContainer = document.getElementById('progress-bar-container');
+        const progressBar = document.getElementById('progressBar');
 
-    function updateProgressBar() {
-        const scrollTop = window.scrollY;
-        const documentHeight = pdfViewer.scrollHeight;
-        const windowHeight = window.innerHeight;
-        const scrollProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
-        const roundedProgress = scrollProgress.toFixed(0);
-
-        progressBar.style.width = roundedProgress + '%';
-        progressBar.setAttribute('data-progress', roundedProgress + '%');
-        progressBarContainer.style.display = 'block';
-
-        const currentPage = Math.ceil(scrollTop / pdfViewer.clientHeight) + 1;
-        localStorage.setItem(`book-${bookId}-lastPage`, currentPage);
-        localStorage.setItem(`book-${bookId}-lastScroll`, scrollTop);
-    }
-
-    window.addEventListener('scroll', updateProgressBar);
-    window.addEventListener('resize', updateProgressBar);
-
-    setTimeout(updateProgressBar, 200);
-}
-
-    //Función para guardar el progreso de lectura
-    function guardarProgresoLectura() {
-        const visorPDF = document.getElementById('pdf-viewer');
-        const scrollTop = window.scrollY;
-        const alturaTotal = visorPDF.scrollHeight - window.innerHeight;
-        const progreso = scrollTop / alturaTotal;
+        function loadSavedProgress() {
+            const savedPage = localStorage.getItem(`book-${bookId}-currentPage`);
+            const savedScrollPosition = localStorage.getItem(`book-${bookId}-scrollPosition`);
+            if (savedPage && savedScrollPosition) {
+                window.scrollTo(0, parseInt(savedScrollPosition));
+            }
+        }
+    
+        loadSavedProgress();
+    
+        function updateProgressBar() {
+            const scrollTop = window.scrollY;
+            const documentHeight = pdfViewer.scrollHeight;
+            const windowHeight = window.innerHeight;
+            const scrollProgress = (scrollTop / (documentHeight - windowHeight)) * 100;
+            const roundedProgress = scrollProgress.toFixed(0);
         
-        localStorage.setItem(`libro-${bookId}-progreso`, progreso);
-    }
-
-    function cargarProgresoLectura() {
-        const progreso = parseFloat(localStorage.getItem(`libro-${bookId}-progreso`)) || 0;
-        const visorPDF = document.getElementById('pdf-viewer');
-        const alturaTotal = visorPDF.scrollHeight - window.innerHeight;
-        const posicionScroll = progreso * alturaTotal;
+            progressBar.style.width = roundedProgress + '%';
+            progressBar.setAttribute('data-progress', roundedProgress + '%');
+            progressBarContainer.style.display = 'block';
         
-        window.scrollTo(0, posicionScroll);
+            localStorage.setItem(`book-${bookId}-progress`, roundedProgress);
+            localStorage.setItem(`book-${bookId}-scrollPosition`, scrollTop);
+        }
+    
+        window.addEventListener('scroll', updateProgressBar);
+        window.addEventListener('resize', updateProgressBar);
+    
+        updateProgressBar();
     }
-
-    setInterval(guardarProgresoLectura, 5000);
-
-    // Llama a cargarProgresoLectura después de que el PDF se haya renderizado
-    // Es posible que necesites ajustar dónde se llama esto según tu lógica de renderizado de PDF
-    document.addEventListener('pdf-renderizado', cargarProgresoLectura);
 
     // Función para el reproductor de audio
     function setupAudioPlayer(audioUrl, isSpreaker, isSpotify) {
@@ -181,7 +155,7 @@ function setupScrollProgress(pdfViewer, pdfDoc, totalPages) {
 
             audioPlayerContainer.appendChild(audio);
         }
-    }
+      }
 
     // Al cargar la página, obtener el libro por su ID y mostrarlo
     getBook(bookId);
