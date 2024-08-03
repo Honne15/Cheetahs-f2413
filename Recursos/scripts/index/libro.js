@@ -2,7 +2,6 @@ document.addEventListener('DOMContentLoaded', function() {
     const urlParams = new URLSearchParams(window.location.search);
     const bookId = urlParams.get('id');
     let pdfLibro = '/Recursos/pdfs/' + bookId + '.pdf';
-    let pdfGuia = '/Recursos/pdfs/guias/' + bookId + '.pdf';
 
     const conFavoritos = JSON.parse(localStorage.getItem('conFavoritos'));
 
@@ -10,14 +9,10 @@ document.addEventListener('DOMContentLoaded', function() {
     function getBook(id) {
         const libro = conFavoritos.find((fila) => fila[0] === id);
         if (libro) {
-            pdfLibro = libro[4];
-            pdfGuia = libro[6];
+            pdfLibro = libro[2];
             console.log('pdfLibro', pdfLibro);
-            console.log('pdfGuia', pdfGuia);
             if (window.location.pathname.includes('leerlibro.html')) {
                 mostrarPDF(pdfLibro);
-            } else if (window.location.pathname.includes('leerguia.html')) {
-                mostrarPDF(pdfGuia);
             }
             setupGuardarButton(libro);
             if (libro.length > 5) {
